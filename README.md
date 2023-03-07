@@ -1,2 +1,3 @@
-# SDK-CPP
-C++ SDK for NovelCraft
+# SDK-C
+
+NovelCraft SDK for C language.
