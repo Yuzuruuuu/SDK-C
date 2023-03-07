@@ -8,10 +8,12 @@
 extern "C" {
 #endif
 
+#include "ncsdk_export.h"
+
 #include "json.h/json.h"
 
 /// @brief Represents the transmission direction of the message.
-enum ncsdk_Message_BoundToKind {
+NCSDK_EXPORT enum ncsdk_Message_BoundToKind {
   /// @brief The message is sent from the client to the server.
   ncsdk_Message_BoundToKind_ServerBound,
 
@@ -20,7 +22,7 @@ enum ncsdk_Message_BoundToKind {
 };
 
 /// @brief Represents the message's type.
-enum ncsdk_Message_MessageKind {
+NCSDK_EXPORT enum ncsdk_Message_MessageKind {
   ncsdk_Message_MessageKind_Ping = 100,
 
   ncsdk_Message_MessageKind_Error = 200,
@@ -53,30 +55,30 @@ enum ncsdk_Message_MessageKind {
 };
 
 /// @brief Represents a message.
-struct ncsdk_Message;
+NCSDK_EXPORT struct ncsdk_Message;
 
 /// @brief Parses the message from the JSON representation.
 /// @param json The JSON representation of the message.
 /// @return The message, or NULL if failed.
-const struct ncsdk_Message* ncsdk_Message_Parse(
+NCSDK_EXPORT const struct ncsdk_Message* ncsdk_Message_Parse(
     const struct json_value_s* json);
 
 /// @brief Gets the JSON representation of the message.
 /// @param message The message.
 /// @return The JSON representation of the message.
-const struct json_value_s* ncsdk_Message_GetJson(
+NCSDK_EXPORT const struct json_value_s* ncsdk_Message_GetJson(
     const struct ncsdk_Message* message);
 
 /// @brief Gets the message's bound-to kind.
 /// @param message The message.
 /// @return The message's bound-to kind.
-enum ncsdk_Message_BoundToKind ncsdk_Message_GetBoundTo(
+NCSDK_EXPORT enum ncsdk_Message_BoundToKind ncsdk_Message_GetBoundTo(
     const struct ncsdk_Message* message);
 
 /// @brief Gets the message's message kind.
 /// @param message The message.
 /// @return The message's message kind.
-enum ncsdk_Message_MessageKind ncsdk_Message_GetType(
+NCSDK_EXPORT enum ncsdk_Message_MessageKind ncsdk_Message_GetType(
     const struct ncsdk_Message* message);
 
 #ifdef __cplusplus

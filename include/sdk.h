@@ -8,6 +8,8 @@
 extern "C" {
 #endif
 
+#include "ncsdk_export.h"
+
 #include "agent.h"
 #include "block_source.h"
 #include "client.h"
@@ -17,37 +19,37 @@ extern "C" {
 
 /// @brief Gets the agent representing the player controlled by the user.
 /// @return The agent.
-struct ncsdk_Agent *ncsdk_GetAgent();
+NCSDK_EXPORT struct ncsdk_Agent *ncsdk_GetAgent();
 
 /// @brief Gets the block collection.
 /// @return The block collection.
-const struct ncsdk_BlockSource *ncsdk_GetBlocks();
+NCSDK_EXPORT const struct ncsdk_BlockSource *ncsdk_GetBlocks();
 
 /// @brief Gets the client for sending and receiving messages directly to or
 /// from the server.
 /// @return The client.
-struct ncsdk_Client *ncsdk_GetClient();
+NCSDK_EXPORT struct ncsdk_Client *ncsdk_GetClient();
 
 /// @brief Gets the entity collection.
 /// @return The entity collection.
-const struct ncsdk_EntitySource *ncsdk_GetEntities();
+NCSDK_EXPORT const struct ncsdk_EntitySource *ncsdk_GetEntities();
 
 /// @brief Gets the logger.
 /// @return The logger.
-const struct ncsdk_Logger *ncsdk_GetLogger();
+NCSDK_EXPORT const struct ncsdk_Logger *ncsdk_GetLogger();
 
 /// @brief Gets the current tick.
 /// @return The current tick. -1 if no tick information is received.
-int ncsdk_GetTick();
+NCSDK_EXPORT int ncsdk_GetTick();
 
 /// @brief Gets the number of ticks per second.
 /// @return The number of ticks per second. -1 if no tick information is
 /// received.
-int ncsdk_GetTicksPerSecond();
+NCSDK_EXPORT int ncsdk_GetTicksPerSecond();
 
 /// @brief Initializes the SDK.
 /// @param config The configuration.
-void ncsdk_Initialize(const struct ncsdk_Config *config);
+NCSDK_EXPORT void ncsdk_Initialize(const struct ncsdk_Config *config);
 
 #ifdef __cplusplus
 }

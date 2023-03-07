@@ -8,8 +8,10 @@
 extern "C" {
 #endif
 
+#include "ncsdk_export.h"
+
 /// @brief Represents a configuration.
-struct ncsdk_Config {
+NCSDK_EXPORT struct ncsdk_Config {
   /// @brief The IP address or the host name of the server.
   const char *host;
 

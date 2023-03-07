@@ -8,14 +8,16 @@
 extern "C" {
 #endif
 
+#include "ncsdk_export.h"
+
 /// @brief Represents a collection of blocks.
-struct ncsdk_BlockSource;
+NCSDK_EXPORT struct ncsdk_BlockSource;
 
 /// @brief Gets the block at the position.
 /// @param block_source The block source.
 /// @param position The position.
 /// @return The block, or NULL if not found.
-const struct ncsdk_Block* ncsdk_BlockSource_Get(
+NCSDK_EXPORT const struct ncsdk_Block* ncsdk_BlockSource_Get(
     const struct ncsdk_BlockSource* block_source,
     const struct ncsdk_Position_Int* position);
 

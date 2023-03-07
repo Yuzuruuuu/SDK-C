@@ -8,13 +8,15 @@
 extern "C" {
 #endif
 
+#include "ncsdk_export.h"
+
 /// @brief Represents a position with integer values in the world.
-struct ncsdk_Position_Int {
+NCSDK_EXPORT struct ncsdk_Position_Int {
   int x, y, z;
 };
 
 /// @brief Represents a position with floating point values in the world.
-struct ncsdk_Position_Float {
+NCSDK_EXPORT struct ncsdk_Position_Float {
   float x, y, z;
 };
 
