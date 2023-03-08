@@ -9,7 +9,6 @@ extern "C" {
 #endif
 
 #include "ncsdk_export.h"
-
 #include "orientation.h"
 #include "position.h"
 

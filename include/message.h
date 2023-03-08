@@ -8,9 +8,8 @@
 extern "C" {
 #endif
 
-#include "ncsdk_export.h"
-
 #include "json.h/json.h"
+#include "ncsdk_export.h"
 
 /// @brief Represents the transmission direction of the message.
 NCSDK_EXPORT enum ncsdk_Message_BoundToKind {

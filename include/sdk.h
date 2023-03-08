@@ -8,14 +8,13 @@
 extern "C" {
 #endif
 
-#include "ncsdk_export.h"
-
 #include "agent.h"
 #include "block_source.h"
 #include "client.h"
 #include "config.h"
 #include "entity_source.h"
 #include "logger.h"
+#include "ncsdk_export.h"
 
 /// @brief Gets the agent representing the player controlled by the user.
 /// @return The agent.

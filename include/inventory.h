@@ -8,9 +8,8 @@
 extern "C" {
 #endif
 
-#include "ncsdk_export.h"
-
 #include "item_stack.h"
+#include "ncsdk_export.h"
 
 /// @brief Represents an inventory.
 NCSDK_EXPORT struct ncsdk_Inventory;
@@ -25,30 +24,33 @@ NCSDK_EXPORT const struct ncsdk_ItemStack* ncsdk_Inventory_Get(
 /// @brief Gets the number of slots in the hot bar.
 /// @param inventory The inventory.
 /// @return The number of slots in the hot bar.
-NCSDK_EXPORT int ncsdk_Inventory_GetHotBarSize(const struct ncsdk_Inventory* inventory);
+NCSDK_EXPORT int ncsdk_Inventory_GetHotBarSize(
+    const struct ncsdk_Inventory* inventory);
 
 /// @brief Gets the slot that the main hand is currently in.
 /// @param inventory The inventory.
 /// @return The slot that the main hand is currently in.
-NCSDK_EXPORT int ncsdk_Inventory_GetMainHandSlot(const struct ncsdk_Inventory* inventory);
+NCSDK_EXPORT int ncsdk_Inventory_GetMainHandSlot(
+    const struct ncsdk_Inventory* inventory);
 
 /// @brief Sets the slot that the main hand is currently in.
 /// @param inventory The inventory.
 /// @param slot The slot that the main hand is currently in.
-NCSDK_EXPORT void ncsdk_Inventory_SetMainHandSlot(struct ncsdk_Inventory* inventory,
-                                     int slot);
+NCSDK_EXPORT void ncsdk_Inventory_SetMainHandSlot(
+    struct ncsdk_Inventory* inventory, int slot);
 
 /// @brief Gets the number of slots in the inventory.
 /// @param inventory The inventory.
 /// @return The number of slots in the inventory.
-NCSDK_EXPORT int ncsdk_Inventory_GetSize(const struct ncsdk_Inventory* inventory);
+NCSDK_EXPORT int ncsdk_Inventory_GetSize(
+    const struct ncsdk_Inventory* inventory);
 
 /// @brief Drops items from a slot.
 /// @param inventory The inventory.
 /// @param slot The slot.
 /// @param count The number of items to drop.
-NCSDK_EXPORT void ncsdk_Inventory_DropItem(struct ncsdk_Inventory* inventory, int slot,
-                              int count);
+NCSDK_EXPORT void ncsdk_Inventory_DropItem(struct ncsdk_Inventory* inventory,
+                                           int slot, int count);
 
 /// @brief Merges items from two slots into one slot.
 /// @param inventory The inventory.
@@ -59,14 +61,14 @@ NCSDK_EXPORT void ncsdk_Inventory_DropItem(struct ncsdk_Inventory* inventory, in
 /// size, toSlot will be filled to the maximum stack size and the remaining
 /// items will be left in fromSlot.
 NCSDK_EXPORT void ncsdk_Inventory_MergeSlots(struct ncsdk_Inventory* inventory,
-                                int from_slot, int to_slot);
+                                             int from_slot, int to_slot);
 
 /// @brief Swaps items between two slots.
 /// @param inventory The inventory.
 /// @param slot1 The first slot.
 /// @param slot2 The second slot.
-NCSDK_EXPORT void ncsdk_Inventory_SwapSlots(struct ncsdk_Inventory* inventory, int slot1,
-                               int slot2);
+NCSDK_EXPORT void ncsdk_Inventory_SwapSlots(struct ncsdk_Inventory* inventory,
+                                            int slot1, int slot2);
 
 #ifdef __cplusplus
 }
