@@ -21,13 +21,17 @@ aux_source_directory(. TEST_LIST)
 
 add_executable(ncsdk_test ${TEST_LIST})
 
-target_link_libraries(ncsdk_test GTest::gtest_main ncsdk)
+target_link_libraries(ncsdk_test GTest::gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(ncsdk_test)
 
 target_include_directories(ncsdk_test PUBLIC
-                           ${CMAKE_BINARY_DIR}
+                           ${CMAKE_CURRENT_BINARY_DIR}
                            ${CMAKE_CURRENT_SOURCE_DIR}/../include
                            ${CMAKE_CURRENT_SOURCE_DIR}/../third_party
                            )
+
+add_subdirectory(../src ncsdk)
+
+target_link_libraries(ncsdk_test ncsdk)
