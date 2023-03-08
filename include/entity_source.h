@@ -8,6 +8,7 @@
 extern "C" {
 #endif
 
+#include "entity.h"
 #include "ncsdk_export.h"
 
 /// @brief Represents a collection of entities.
