@@ -1,6 +1,6 @@
 # NovelCraft SDK for C Language
 
-If you would just like to browse the API documentation, you can do so [here](https://novelcraft.github.io/SDK-C/globals_func.html).
+If you would just like to browse the API documentation, you can do so [here](https://novelcraft.github.io/SDK-C/en/globals_func.html).
 
 ## Introduction
 
@@ -83,4 +83,4 @@ void example() {
 
 ## Next steps
 
-To learn more about NovelCraft SDK for C Language, you can read the API documentation. You can check out all APIs [here](https://novelcraft.github.io/SDK-C/globals_func.html). You can also check out the examples in the examples folder. You can run them to see how they work and modify them to suit your needs. To run an example, you need to have NovelCraft installed on your machine and specify the path to the executable in the CMakeLists.txt file.
+To learn more about NovelCraft SDK for C Language, you can read the API documentation. You can check out all APIs [here](https://novelcraft.github.io/SDK-C/en/globals_func.html). You can also check out the examples in the examples folder. You can run them to see how they work and modify them to suit your needs. To run an example, you need to have NovelCraft installed on your machine and specify the path to the executable in the CMakeLists.txt file.

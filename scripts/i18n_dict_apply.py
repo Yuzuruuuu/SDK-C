@@ -32,5 +32,13 @@ def main():
         with open(os.path.join(script_path, '..', 'include', file), 'w', encoding='utf-8') as f:
             f.writelines(lines)
 
+    # Overwrite README.md with README.<lang>.md
+    if os.path.exists(os.path.join(script_path, '..', f'README.{args.lang}.md')):
+        with open(os.path.join(script_path, '..', f'README.{args.lang}.md'), 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+
+        with open(os.path.join(script_path, '..', 'README.md'), 'w', encoding='utf-8') as f:
+            f.writelines(lines)
+
 if __name__ == '__main__':
     main()
