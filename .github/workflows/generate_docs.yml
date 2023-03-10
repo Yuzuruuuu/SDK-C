@@ -48,6 +48,9 @@ jobs:
       - generate_docs_en
       - generate_docs_zh
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Download all artifacts
         uses: actions/download-artifact@v3
         with:
