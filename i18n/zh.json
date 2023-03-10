@@ -1,0 +1,882 @@
+[
+    {
+        "key": "NovelCraft Agent interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents the kind of interaction that an agent can perform.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents the kind of movement that an agent can perform.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a player that can be controlled by an AI.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent's orientation.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent's orientation.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent's position.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent's position.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent's type ID.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent's type ID.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent's unique ID.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent's unique ID.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent's inventory.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent's inventory.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent's movement.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent's movement.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Sets the agent's movement.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The movement.",
+        "type": "@param movement",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent's token.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent's token.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Performs an attack.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The kind of attack.",
+        "type": "@param kind",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Performs a jump.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Makes the agent look at a position.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The position.",
+        "type": "@param position",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Sets the agent's movement.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The movement.",
+        "type": "@param movement",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Performs a use action.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@param agent",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The kind of use action.",
+        "type": "@param kind",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Block interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a block.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the block's position",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block.",
+        "type": "@param block",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block's position.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the block's type ID.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block.",
+        "type": "@param block",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block's type ID.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft BlockSource interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a collection of blocks.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the block at the position.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block source.",
+        "type": "@param block_source",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The position.",
+        "type": "@param position",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block, or NULL if not found.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Client interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a client that can connect to a server.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Registers a message handler.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The client.",
+        "type": "@param client",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The handler.",
+        "type": "@param handler",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Sends a message to the server.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The client.",
+        "type": "@param client",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message.",
+        "type": "@param message",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Config interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a configuration.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Entity interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents an entity.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the entity's orientation.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity.",
+        "type": "@param entity",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity's orientation.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the entity's position.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity.",
+        "type": "@param entity",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity's position.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the entity's type ID.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity.",
+        "type": "@param entity",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity's type ID.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the entity's unique ID.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity.",
+        "type": "@param entity",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity's unique ID.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft EntitySource interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a collection of entities.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the entity with the unique ID.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity source.",
+        "type": "@param entity_source",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The unique ID.",
+        "type": "@param unique_id",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity, or NULL if not found.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Inventory interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents an inventory.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the item in a slot.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param inventory",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The slot.",
+        "type": "@param slot",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The item in the slot. Or NULL if the slot is empty.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the number of slots in the hot bar.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param inventory",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of slots in the hot bar.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the slot that the main hand is currently in.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param inventory",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The slot that the main hand is currently in.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Sets the slot that the main hand is currently in.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param inventory",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The slot that the main hand is currently in.",
+        "type": "@param slot",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the number of slots in the inventory.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param inventory",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of slots in the inventory.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Drops items from a slot.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param inventory",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The slot.",
+        "type": "@param slot",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of items to drop.",
+        "type": "@param count",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Merges items from two slots into one slot.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param inventory",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The slot to merge from.",
+        "type": "@param from_slot",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The slot to merge to.",
+        "type": "@param to_slot",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Swaps items between two slots.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param inventory",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The first slot.",
+        "type": "@param slot1",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The second slot.",
+        "type": "@param slot2",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft ItemStack interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a stack of items.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the count of items in the stack.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The item stack.",
+        "type": "@param item_stack",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The count of items in the stack.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the type ID of the items.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The item stack.",
+        "type": "@param item_stack",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The type ID.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Logger interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Logger interface provides logging functionality.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Logs a debug message.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The logger instance.",
+        "type": "@param logger",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message to log.",
+        "type": "@param message",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Logs an info message.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The logger instance.",
+        "type": "@param logger",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message to log.",
+        "type": "@param message",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Logs a warning message.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The logger instance.",
+        "type": "@param logger",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message to log.",
+        "type": "@param message",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Logs an error message.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The logger instance.",
+        "type": "@param logger",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message to log.",
+        "type": "@param message",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Message interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents the transmission direction of the message.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents the message's type.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a message.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Parses the message from the JSON representation.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The JSON representation of the message.",
+        "type": "@param json",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message, or NULL if failed.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the JSON representation of the message.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message.",
+        "type": "@param message",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The JSON representation of the message.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the message's bound-to kind.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message.",
+        "type": "@param message",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message's bound-to kind.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the message's message kind.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message.",
+        "type": "@param message",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message's message kind.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Orientation interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a direction in 3D space.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft Position interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a position with integer values in the world.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents a position with floating point values in the world.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "NovelCraft SDK interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent representing the player controlled by the user.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the block collection.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block collection.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the client for sending and receiving messages directly to or",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The client.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the entity collection.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The entity collection.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the logger.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The logger.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the current tick.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The current tick. -1 if no tick information is received.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the number of ticks per second.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of ticks per second. -1 if no tick information is",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Initializes the SDK.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The configuration.",
+        "type": "@param config",
+        "zh": "<no translation>"
+    }
+]
