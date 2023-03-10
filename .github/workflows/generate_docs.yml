@@ -66,7 +66,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: generate_docs
+    needs: merge_docs
     permissions:
       id-token: write
       pages: write
