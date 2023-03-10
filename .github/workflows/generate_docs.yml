@@ -5,8 +5,8 @@ on:
   push:
 
 jobs:
-  generate_docs:
-    name: Generate Documentation
+  generate_docs_en:
+    name: Generate English Documentation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,6 +14,48 @@ jobs:
 
       - name: Generate documentation
         uses: mattnotmitt/doxygen-action@1.9.4
+
+      - name: Upload the artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: en
+          path: docs/
+
+  generate_docs_zh:
+    name: Generate Chinese Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Apply Chinese translation
+        run: |
+          python scripts/i18n_dict_apply.py zh
+
+      - name: Generate documentation
+        uses: mattnotmitt/doxygen-action@1.9.4
+
+      - name: Upload the artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: zh
+          path: docs/
+
+  merge_docs:
+    name: Merge Documentation
+    runs-on: ubuntu-latest
+    needs:
+      - generate_docs_en
+      - generate_docs_zh
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: docs/
+
+      - name: Copy index.html
+        run: |
+          cp i18n/index.html docs/index.html
 
       - name: Upload the pages artifact
         uses: actions/upload-pages-artifact@v1.0.3
