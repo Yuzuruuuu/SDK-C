@@ -10,7 +10,42 @@
         "zh": "<no translation>"
     },
     {
+        "key": "Clicks.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Starts holding.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Ends holding.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
         "key": "Represents the kind of movement that an agent can perform.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Moves forward.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Moves backward.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Moves left.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Moves right.",
         "type": "@brief",
         "zh": "<no translation>"
     },
@@ -326,6 +361,26 @@
     },
     {
         "key": "Represents a configuration.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The IP address or the host name of the server.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The name of the agent.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The port of the server.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The token of the agent.",
         "type": "@brief",
         "zh": "<no translation>"
     },
@@ -696,6 +751,16 @@
     },
     {
         "key": "Represents the transmission direction of the message.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message is sent from the client to the server.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message is sent from the server to the client.",
         "type": "@brief",
         "zh": "<no translation>"
     },

@@ -19,7 +19,7 @@ def main():
             continue
 
         with open(os.path.join(script_path, '..', 'include', file), 'r', encoding='utf-8') as f:
-            regex = re.compile(r'\/\/\/ (@brief|@param \S+|@return) (.*)')
+            regex = re.compile(r'^ *\/\/\/ (@brief|@param \S+|@return) (.*)$')
             for line in f:
                 match = regex.match(line)
                 if match:
