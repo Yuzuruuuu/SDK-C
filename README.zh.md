@@ -1,10 +1,10 @@
-# NovelCraft C语言的SDK
+# NovelCraft SDK（C语言）
 
 如果你只想浏览一下API文档，你可以这样做[这里](https://novelcraft.github.io/SDK-C/zh/globals_func.html)。
 
 ## 简介
 
-NovelCraft SDK for C语言是一个C语言库，允许开发者为NovelCraft创建代理，这是一个可扩展的开源沙盒平台，灵感来自Minecraft。NovelCraft也是一个图像和符号世界状态的数据集，该数据集由在视频游戏世界中完成pogo-stick组装任务的代理看到。通过NovelCraft C语言的SDK，开发者可以访问各种功能来控制代理的行动、感知和与环境的互动。该SDK还支持开放世界中的新奇事物检测和发现，其中新奇的物体会影响游戏的进行。NovelCraft C语言的SDK被设计成易于使用并与现有的C语言项目整合。它兼容于Windows、Linux和Mac OS平台。NovelCraft SDK for C语言是为NovelCraft开发新颖和创造性代理的强大工具。
+NovelCraft SDK for C语言是一个C语言库，允许开发者为NovelCraft创建代理，这是一个可扩展的开源沙盒平台，灵感来自Minecraft。通过NovelCraft C语言的SDK，开发者可以访问各种功能来控制代理的行动、感知和与环境的互动。该SDK还支持开放世界中的新奇事物检测和发现，其中新奇的物体会影响游戏的进行。NovelCraft C语言的SDK被设计成易于使用并与现有的C语言项目整合。它兼容于Windows、Linux和Mac OS平台。NovelCraft SDK for C语言是为NovelCraft开发新颖和创造性代理的强大工具。
 
 ## 安装
 

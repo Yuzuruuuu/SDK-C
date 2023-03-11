@@ -4,7 +4,7 @@ If you would just like to browse the API documentation, you can do so [here](htt
 
 ## Introduction
 
-NovelCraft SDK for C Language is a library for C language that allows developers to create agents for NovelCraft, a scalable open source sandbox platform inspired by Minecraft. NovelCraft is also a dataset of images and symbolic world-states seen by an agent completing a pogo-stick assembly task within a video game world. With NovelCraft SDK for C Language, developers can access various functions to control the agent’s actions, perceptions, and interactions with the environment. The SDK also supports novelty detection and discovery in open worlds, where novel objects can impact gameplay. NovelCraft SDK for C Language is designed to be easy to use and integrate with existing C projects. It is compatible with Windows, Linux, and Mac OS platforms. NovelCraft SDK for C Language is a powerful tool for developing novel and creative agents for NovelCraft.
+NovelCraft SDK for C Language is a library for C language that allows developers to create agents for NovelCraft, a scalable open source sandbox platform inspired by Minecraft. With NovelCraft SDK for C Language, developers can access various functions to control the agent’s actions, perceptions, and interactions with the environment. The SDK also supports novelty detection and discovery in open worlds, where novel objects can impact gameplay. NovelCraft SDK for C Language is designed to be easy to use and integrate with existing C projects. It is compatible with Windows, Linux, and Mac OS platforms. NovelCraft SDK for C Language is a powerful tool for developing novel and creative agents for NovelCraft.
 
 ## Installation
 

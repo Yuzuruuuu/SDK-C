@@ -3,11 +3,13 @@ import json
 import os
 import re
 
+
 def main():
     script_path = os.path.dirname(os.path.realpath(__file__))
 
     # Parse arguments
-    parser = argparse.ArgumentParser(description='Generate a dictionary for i18n')
+    parser = argparse.ArgumentParser(
+        description='Generate a dictionary for i18n')
     parser.add_argument('lang', type=str, help='Language code')
     args = parser.parse_args()
 
@@ -35,7 +37,7 @@ def main():
                     if entry['key'] == match.group(2) and entry['type'] == match.group(1):
                         found = True
                         break
-                
+
                 if found:
                     continue
 
@@ -48,6 +50,7 @@ def main():
     # Write a JSON file
     with open(os.path.join(script_path, '..', 'i18n', args.lang + '.json'), 'w', encoding='utf-8') as f:
         json.dump(entries, f, indent=4, ensure_ascii=False)
+
 
 if __name__ == '__main__':
     main()
