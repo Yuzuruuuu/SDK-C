@@ -39,6 +39,7 @@ NCSDK_EXPORT enum ncsdk_Agent_MovementKind {
   ncsdk_Agent_MovementKind_Right,
 };
 
+/// @struct ncsdk_Agent
 /// @brief Represents a player that can be controlled by an AI.
 NCSDK_EXPORT struct ncsdk_Agent;
 

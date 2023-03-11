@@ -11,6 +11,7 @@ extern "C" {
 #include "item_stack.h"
 #include "ncsdk_export.h"
 
+/// @struct ncsdk_Inventory
 /// @brief Represents an inventory.
 NCSDK_EXPORT struct ncsdk_Inventory;
 

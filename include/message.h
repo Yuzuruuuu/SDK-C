@@ -53,6 +53,7 @@ NCSDK_EXPORT enum ncsdk_Message_MessageKind {
   ncsdk_Message_MessageKind_PerformUse
 };
 
+/// @struct ncsdk_Message
 /// @brief Represents a message.
 NCSDK_EXPORT struct ncsdk_Message;
 

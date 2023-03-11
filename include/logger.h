@@ -10,6 +10,7 @@ extern "C" {
 
 #include "ncsdk_export.h"
 
+/// @struct ncsdk_Logger
 /// @brief Logger interface provides logging functionality.
 NCSDK_EXPORT struct ncsdk_Logger;
 

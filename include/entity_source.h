@@ -11,6 +11,7 @@ extern "C" {
 #include "entity.h"
 #include "ncsdk_export.h"
 
+/// @struct ncsdk_EntitySource
 /// @brief Represents a collection of entities.
 NCSDK_EXPORT struct ncsdk_EntitySource;
 

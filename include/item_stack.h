@@ -10,6 +10,7 @@ extern "C" {
 
 #include "ncsdk_export.h"
 
+/// @struct ncsdk_ItemStack
 /// @brief Represents a stack of items.
 NCSDK_EXPORT struct ncsdk_ItemStack;
 

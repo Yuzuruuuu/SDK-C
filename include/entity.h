@@ -12,6 +12,7 @@ extern "C" {
 #include "orientation.h"
 #include "position.h"
 
+/// @struct ncsdk_Entity
 /// @brief Represents an entity.
 NCSDK_EXPORT struct ncsdk_Entity;
 

@@ -10,6 +10,7 @@ extern "C" {
 
 #include "ncsdk_export.h"
 
+/// @struct ncsdk_BlockSource
 /// @brief Represents a collection of blocks.
 NCSDK_EXPORT struct ncsdk_BlockSource;
 

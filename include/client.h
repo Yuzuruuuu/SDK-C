@@ -11,6 +11,7 @@ extern "C" {
 #include "message.h"
 #include "ncsdk_export.h"
 
+/// @struct ncsdk_Client
 /// @brief Represents a client that can connect to a server.
 NCSDK_EXPORT struct ncsdk_Client;
 

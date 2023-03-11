@@ -10,6 +10,7 @@ extern "C" {
 
 #include "ncsdk_export.h"
 
+/// @struct ncsdk_Config
 /// @brief Represents a configuration.
 NCSDK_EXPORT struct ncsdk_Config;
 
