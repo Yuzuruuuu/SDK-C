@@ -11,19 +11,11 @@ extern "C" {
 #include "ncsdk_export.h"
 
 /// @brief Represents a configuration.
-NCSDK_EXPORT struct ncsdk_Config {
-  /// @brief The IP address or the host name of the server.
-  const char *host;
+NCSDK_EXPORT struct ncsdk_Config;
 
-  /// @brief The name of the agent.
-  const char *name;
-
-  /// @brief The port of the server.
-  const int port;
-
-  /// @brief The token of the agent.
-  const char *token;
-};
+/// @brief Creates a new configuration.
+/// @return The configuration.
+NCSDK_EXPORT struct ncsdk_Config* ncsdk_Config_New(const char* host, int port, const char* token);
 
 #ifdef __cplusplus
 }
