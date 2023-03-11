@@ -11,9 +11,14 @@ def main():
     parser.add_argument('lang', type=str, help='Language code')
     args = parser.parse_args()
 
-    # Extract all possible entries
     entries = []
 
+    # Load existing dictionary if exists
+    if os.path.exists(os.path.join(script_path, '..', 'i18n', args.lang + '.json')):
+        with open(os.path.join(script_path, '..', 'i18n', args.lang + '.json'), 'r', encoding='utf-8') as f:
+            entries = json.load(f)
+
+    # Extract all possible entries
     for file in os.listdir(os.path.join(script_path, '..', 'include')):
         if not file.endswith('.h'):
             continue
@@ -22,12 +27,23 @@ def main():
             regex = re.compile(r'^ *\/\/\/ (@brief|@param \S+|@return) (.*)$')
             for line in f:
                 match = regex.match(line)
-                if match:
-                    entries.append({
-                        'key': match.group(2),
-                        'type': match.group(1),
-                        args.lang: '<no translation>'
-                    })
+                if not match:
+                    continue
+
+                found = False
+                for entry in entries:
+                    if entry['key'] == match.group(2) and entry['type'] == match.group(1):
+                        found = True
+                        break
+                
+                if found:
+                    continue
+
+                entries.append({
+                    'key': match.group(2),
+                    'type': match.group(1),
+                    args.lang: '<no translation>'
+                })
 
     # Write a JSON file
     with open(os.path.join(script_path, '..', 'i18n', args.lang + '.json'), 'w', encoding='utf-8') as f:
