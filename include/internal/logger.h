@@ -5,14 +5,12 @@
 extern "C" {
 #endif
 
-struct ncsdk_Logger {
-  const char* logging_namespace;
-};
+#include "logger.h"
 
 /// @brief Creates a new logger instance.
 /// @param logging_namespace The namespace to use for logging.
 /// @return A new logger instance.
-struct ncsdk_Logger* ncsdk_Logger_New(const char* logging_namespace);
+struct ncsdk_Logger ncsdk_Logger_New(const char* logging_namespace);
 
 #ifdef __cplusplus
 }
