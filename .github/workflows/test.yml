@@ -20,7 +20,7 @@ jobs:
 
       - name: Build with CMake
         run: |
-          cmake -S tests -B build
+          cmake -S test -B build
           cmake --build build
 
       - name: Run tests
