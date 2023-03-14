@@ -7,7 +7,6 @@
 #include "internal/client.h"
 #include "internal/logger.h"
 #include "logger.h"
-#include "wic.h"
 
 struct ncsdk_Client {
   struct ncsdk_Logger* logger;

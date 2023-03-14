@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.14)
 project(ncsdk)
 
 # Add dependencies.
-add_subdirectory(../third_party/argparse/ argparse)
-add_subdirectory(../third_party/wic/ wic)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../third_party/argparse argparse)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../third_party/libwebsockets libwebsockets)
 
 # Set build arguments.
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -23,16 +23,16 @@ aux_source_directory(. SRC_LIST)
 add_library(${PROJECT_NAME} STATIC ${SRC_LIST})
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-                           ${CMAKE_CURRENT_SOURCE_DIR}/../include/
+                           ${CMAKE_CURRENT_SOURCE_DIR}/../include
                            )
 
 # Link dependencies.
 target_link_libraries(${PROJECT_NAME} PUBLIC 
                       argparse
-                      wic
+                      websockets
                       )
 
 # Add dependency include directories.
 target_include_directories(${PROJECT_NAME} PUBLIC
-                           ${CMAKE_CURRENT_SOURCE_DIR}/../third_party/json.h/
+                           ${CMAKE_CURRENT_SOURCE_DIR}/../third_party/json.h
                            )
