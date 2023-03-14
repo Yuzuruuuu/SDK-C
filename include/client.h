@@ -9,7 +9,7 @@ extern "C" {
 #endif
 
 #include "message.h"
-#include "ncsdk_export.h"
+
 
 /// @struct ncsdk_Client
 /// @brief Represents a client that can connect to a server.
@@ -18,13 +18,13 @@ struct ncsdk_Client;
 /// @brief Registers a message handler.
 /// @param client The client.
 /// @param handler The handler.
-NCSDK_EXPORT void ncsdk_Client_RegisterMessageHandler(
+void ncsdk_Client_RegisterMessageHandler(
     struct ncsdk_Client* client, void (*handler)(const struct ncsdk_Message*));
 
 /// @brief Sends a message to the server.
 /// @param client The client.
 /// @param message The message.
-NCSDK_EXPORT void ncsdk_Client_Send(struct ncsdk_Client* client,
+void ncsdk_Client_Send(struct ncsdk_Client* client,
                                     const struct ncsdk_Message* message);
 
 #ifdef __cplusplus

@@ -9,7 +9,7 @@ extern "C" {
 #endif
 
 #include "entity.h"
-#include "ncsdk_export.h"
+
 
 /// @struct ncsdk_EntitySource
 /// @brief Represents a collection of entities.
@@ -19,7 +19,7 @@ struct ncsdk_EntitySource;
 /// @param entity_source The entity source.
 /// @param unique_id The unique ID.
 /// @return The entity, or NULL if not found.
-NCSDK_EXPORT const struct ncsdk_Entity* ncsdk_EntitySource_Get(
+const struct ncsdk_Entity* ncsdk_EntitySource_Get(
     const struct ncsdk_EntitySource* entity_source, int unique_id);
 
 #ifdef __cplusplus

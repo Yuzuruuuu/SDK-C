@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-#include "ncsdk_export.h"
+
 
 /// @brief Represents a position with integer values in the world.
 struct ncsdk_Position_Int {

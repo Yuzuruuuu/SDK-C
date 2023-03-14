@@ -12,7 +12,7 @@ endif()
 
 aux_source_directory(. SRC_LIST)
 
-add_library(ncsdk SHARED ${SRC_LIST})
+add_library(ncsdk STATIC ${SRC_LIST})
 
 set_target_properties(ncsdk PROPERTIES 
                       C_STANDARD 11)
@@ -22,6 +22,3 @@ target_include_directories(ncsdk PUBLIC
                            ${CMAKE_CURRENT_SOURCE_DIR}/../include
                            ${CMAKE_CURRENT_SOURCE_DIR}/../third_party
                            )
-
-include(GenerateExportHeader)
-generate_export_header(ncsdk)

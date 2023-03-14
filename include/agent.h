@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-#include "ncsdk_export.h"
+
 #include "orientation.h"
 #include "position.h"
 
@@ -46,75 +46,75 @@ struct ncsdk_Agent;
 /// @brief Gets the agent's orientation.
 /// @param agent The agent.
 /// @return The agent's orientation.
-NCSDK_EXPORT const struct ncsdk_Orientation* ncsdk_Agent_GetOrientation(
+const struct ncsdk_Orientation* ncsdk_Agent_GetOrientation(
     const struct ncsdk_Agent* agent);
 
 /// @brief Gets the agent's position.
 /// @param agent The agent.
 /// @return The agent's position.
-NCSDK_EXPORT const struct ncsdk_Position_Float* ncsdk_Agent_GetPosition(
+const struct ncsdk_Position_Float* ncsdk_Agent_GetPosition(
     const struct ncsdk_Agent* agent);
 
 /// @brief Gets the agent's type ID.
 /// @param agent The agent.
 /// @return The agent's type ID.
-NCSDK_EXPORT int ncsdk_Agent_GetTypeId(const struct ncsdk_Agent* agent);
+int ncsdk_Agent_GetTypeId(const struct ncsdk_Agent* agent);
 
 /// @brief Gets the agent's unique ID.
 /// @param agent The agent.
 /// @return The agent's unique ID.
-NCSDK_EXPORT int ncsdk_Agent_GetUniqueId(const struct ncsdk_Agent* agent);
+int ncsdk_Agent_GetUniqueId(const struct ncsdk_Agent* agent);
 
 /// @brief Gets the agent's inventory.
 /// @param agent The agent.
 /// @return The agent's inventory.
-NCSDK_EXPORT const struct ncsdk_Inventory* ncsdk_Agent_GetInventory(
+const struct ncsdk_Inventory* ncsdk_Agent_GetInventory(
     const struct ncsdk_Agent* agent);
 
 /// @brief Gets the agent's movement.
 /// @param agent The agent.
 /// @return The agent's movement.
-NCSDK_EXPORT enum ncsdk_Agent_MovementKind ncsdk_Agent_GetMovement(
+enum ncsdk_Agent_MovementKind ncsdk_Agent_GetMovement(
     const struct ncsdk_Agent* agent);
 
 /// @brief Sets the agent's movement.
 /// @param agent The agent.
 /// @param movement The movement.
-NCSDK_EXPORT void ncsdk_Agent_SetMovement(
+void ncsdk_Agent_SetMovement(
     struct ncsdk_Agent* agent, enum ncsdk_Agent_MovementKind movement);
 
 /// @brief Gets the agent's token.
 /// @param agent The agent.
 /// @return The agent's token.
-NCSDK_EXPORT const struct ncsdk_Token* ncsdk_Agent_GetToken(
+const struct ncsdk_Token* ncsdk_Agent_GetToken(
     const struct ncsdk_Agent* agent);
 
 /// @brief Performs an attack.
 /// @param agent The agent.
 /// @param kind The kind of attack.
-NCSDK_EXPORT void ncsdk_Agent_Attack(struct ncsdk_Agent* agent,
+void ncsdk_Agent_Attack(struct ncsdk_Agent* agent,
                                      enum ncsdk_Agent_InteractionKind kind);
 
 /// @brief Performs a jump.
 /// @param agent The agent.
-NCSDK_EXPORT void ncsdk_Agent_Jump(struct ncsdk_Agent* agent);
+void ncsdk_Agent_Jump(struct ncsdk_Agent* agent);
 
 /// @brief Makes the agent look at a position.
 /// @param agent The agent.
 /// @param position The position.
-NCSDK_EXPORT void ncsdk_Agent_LookAt(
+void ncsdk_Agent_LookAt(
     struct ncsdk_Agent* agent, const struct ncsdk_Position_Float* position);
 
 /// @brief Sets the agent's movement.
 /// @param agent The agent.
 /// @param movement The movement.
-NCSDK_EXPORT void ncsdk_Agent_SetMovement(
+void ncsdk_Agent_SetMovement(
     struct ncsdk_Agent* agent, enum ncsdk_Agent_MovementKind movement);
 
 /// @brief Performs a use action.
 /// @param agent The agent.
 /// @param kind The kind of use action.
-NCSDK_EXPORT void ncsdk_Agent_Use(struct ncsdk_Agent* agent,
+void ncsdk_Agent_Use(struct ncsdk_Agent* agent,
                                   enum ncsdk_Agent_InteractionKind kind);
 
 #ifdef __cplusplus
