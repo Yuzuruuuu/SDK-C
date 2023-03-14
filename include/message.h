@@ -12,7 +12,7 @@ extern "C" {
 #include "ncsdk_export.h"
 
 /// @brief Represents the transmission direction of the message.
-NCSDK_EXPORT enum ncsdk_Message_BoundToKind {
+enum ncsdk_Message_BoundToKind {
   /// @brief The message is sent from the client to the server.
   ncsdk_Message_BoundToKind_ServerBound,
 
@@ -21,7 +21,7 @@ NCSDK_EXPORT enum ncsdk_Message_BoundToKind {
 };
 
 /// @brief Represents the message's type.
-NCSDK_EXPORT enum ncsdk_Message_MessageKind {
+enum ncsdk_Message_MessageKind {
   ncsdk_Message_MessageKind_Ping = 100,
 
   ncsdk_Message_MessageKind_Error = 200,
@@ -55,7 +55,7 @@ NCSDK_EXPORT enum ncsdk_Message_MessageKind {
 
 /// @struct ncsdk_Message
 /// @brief Represents a message.
-NCSDK_EXPORT struct ncsdk_Message;
+struct ncsdk_Message;
 
 /// @brief Parses the message from the JSON representation.
 /// @param json The JSON representation of the message.

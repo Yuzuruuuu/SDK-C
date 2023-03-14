@@ -13,7 +13,7 @@ extern "C" {
 
 /// @struct ncsdk_EntitySource
 /// @brief Represents a collection of entities.
-NCSDK_EXPORT struct ncsdk_EntitySource;
+struct ncsdk_EntitySource;
 
 /// @brief Gets the entity with the unique ID.
 /// @param entity_source The entity source.

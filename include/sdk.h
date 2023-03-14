@@ -11,7 +11,6 @@ extern "C" {
 #include "agent.h"
 #include "block_source.h"
 #include "client.h"
-#include "config.h"
 #include "entity_source.h"
 #include "logger.h"
 #include "ncsdk_export.h"
@@ -47,8 +46,8 @@ NCSDK_EXPORT int ncsdk_GetTick();
 NCSDK_EXPORT int ncsdk_GetTicksPerSecond();
 
 /// @brief Initializes the SDK.
-/// @param config The configuration.
-NCSDK_EXPORT void ncsdk_Initialize(const struct ncsdk_Config *config);
+/// @param argc The number of arguments.
+NCSDK_EXPORT void ncsdk_Initialize(int argc, char *argv[]);
 
 #ifdef __cplusplus
 }

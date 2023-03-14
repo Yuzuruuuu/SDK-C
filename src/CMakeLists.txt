@@ -2,12 +2,20 @@ cmake_minimum_required(VERSION 3.14)
 
 project(ncsdk)
 
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    add_compile_definitions(DEBUG)
+endif()
+
+if(MSVC)
+    add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
+endif()
+
 aux_source_directory(. SRC_LIST)
 
 add_library(ncsdk SHARED ${SRC_LIST})
 
-set(CMAKE_C_STANDARD 17)
-set(CMAKE_C_STANDARD_REQUIRED True)
+set_target_properties(ncsdk PROPERTIES 
+                      C_STANDARD 11)
 
 target_include_directories(ncsdk PUBLIC
                            ${CMAKE_CURRENT_BINARY_DIR}

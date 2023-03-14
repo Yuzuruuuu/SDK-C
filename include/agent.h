@@ -13,7 +13,7 @@ extern "C" {
 #include "position.h"
 
 /// @brief Represents the kind of interaction that an agent can perform.
-NCSDK_EXPORT enum ncsdk_Agent_InteractionKind {
+enum ncsdk_Agent_InteractionKind {
   /// @brief Clicks.
   ncsdk_Agent_InteractionKind_Click,
 
@@ -25,7 +25,7 @@ NCSDK_EXPORT enum ncsdk_Agent_InteractionKind {
 };
 
 /// @brief Represents the kind of movement that an agent can perform.
-NCSDK_EXPORT enum ncsdk_Agent_MovementKind {
+enum ncsdk_Agent_MovementKind {
   /// @brief Moves forward.
   ncsdk_Agent_MovementKind_Forward,
 
@@ -41,7 +41,7 @@ NCSDK_EXPORT enum ncsdk_Agent_MovementKind {
 
 /// @struct ncsdk_Agent
 /// @brief Represents a player that can be controlled by an AI.
-NCSDK_EXPORT struct ncsdk_Agent;
+struct ncsdk_Agent;
 
 /// @brief Gets the agent's orientation.
 /// @param agent The agent.

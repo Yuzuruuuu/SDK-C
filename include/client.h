@@ -13,7 +13,7 @@ extern "C" {
 
 /// @struct ncsdk_Client
 /// @brief Represents a client that can connect to a server.
-NCSDK_EXPORT struct ncsdk_Client;
+struct ncsdk_Client;
 
 /// @brief Registers a message handler.
 /// @param client The client.

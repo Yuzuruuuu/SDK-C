@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include "logger.h"
+struct ncsdk_Logger;
 
 /// @brief Creates a new logger instance.
 /// @param logging_namespace The namespace to use for logging.

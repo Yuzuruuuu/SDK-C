@@ -11,7 +11,7 @@ extern "C" {
 #include "ncsdk_export.h"
 
 /// @brief Represents a direction in 3D space.
-NCSDK_EXPORT struct ncsdk_Orientation {
+struct ncsdk_Orientation {
   float yaw, pitch;
 };
 

@@ -12,7 +12,7 @@ extern "C" {
 
 /// @struct ncsdk_BlockSource
 /// @brief Represents a collection of blocks.
-NCSDK_EXPORT struct ncsdk_BlockSource;
+struct ncsdk_BlockSource;
 
 /// @brief Gets the block at the position.
 /// @param block_source The block source.
