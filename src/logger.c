@@ -39,21 +39,21 @@ static void Print(enum ncsdk_Logger_ConsoleColor color, const char* format,
                   ...);
 
 struct ncsdk_Logger* ncsdk_Logger_New(const char* logging_namespace) {
-  struct ncsdk_Logger* logger =
+  struct ncsdk_Logger* self =
       (struct ncsdk_Logger*)malloc(sizeof(struct ncsdk_Logger));
 
-  logger->logging_namespace = malloc(strlen(logging_namespace) + 1);
-  strcpy(logger->logging_namespace, logging_namespace);
+  self->logging_namespace = malloc(strlen(logging_namespace) + 1);
+  strcpy(self->logging_namespace, logging_namespace);
 
-  return logger;
+  return self;
 }
 
-void ncsdk_Logger_Delete(struct ncsdk_Logger* logger) {
-  free(logger->logging_namespace);
-  free(logger);
+void ncsdk_Logger_Delete(struct ncsdk_Logger* self) {
+  free(self->logging_namespace);
+  free(self);
 }
 
-void ncsdk_Logger_Debug(const struct ncsdk_Logger* logger, const char* format,
+void ncsdk_Logger_Debug(const struct ncsdk_Logger* self, const char* format,
                         ...) {
 #ifndef DEBUG
   return;
@@ -63,7 +63,7 @@ void ncsdk_Logger_Debug(const struct ncsdk_Logger* logger, const char* format,
   GetCurrentTimeString(time_string);
   Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
   Print(ncsdk_Logger_ConsoleColor_kGray, "DEBUG [%s] ",
-        logger->logging_namespace);
+        self->logging_namespace);
 
   va_list args;
   va_start(args, format);
@@ -73,13 +73,13 @@ void ncsdk_Logger_Debug(const struct ncsdk_Logger* logger, const char* format,
   Print(ncsdk_Logger_ConsoleColor_kGray, "\n");
 }
 
-void ncsdk_Logger_Info(const struct ncsdk_Logger* logger, const char* format,
+void ncsdk_Logger_Info(const struct ncsdk_Logger* self, const char* format,
                        ...) {
   char time_string[9];
   GetCurrentTimeString(time_string);
   Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
   Print(ncsdk_Logger_ConsoleColor_kBlue, "INFO  ");
-  Print(ncsdk_Logger_ConsoleColor_kWhite, "[%s] ", logger->logging_namespace);
+  Print(ncsdk_Logger_ConsoleColor_kWhite, "[%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
@@ -89,13 +89,13 @@ void ncsdk_Logger_Info(const struct ncsdk_Logger* logger, const char* format,
   Print(ncsdk_Logger_ConsoleColor_kWhite, "\n");
 }
 
-void ncsdk_Logger_Warn(const struct ncsdk_Logger* logger, const char* format,
+void ncsdk_Logger_Warn(const struct ncsdk_Logger* self, const char* format,
                        ...) {
   char time_string[9];
   GetCurrentTimeString(time_string);
   Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
   Print(ncsdk_Logger_ConsoleColor_kYellow, "WARN  [%s] ",
-        logger->logging_namespace);
+        self->logging_namespace);
 
   va_list args;
   va_start(args, format);
@@ -105,13 +105,13 @@ void ncsdk_Logger_Warn(const struct ncsdk_Logger* logger, const char* format,
   Print(ncsdk_Logger_ConsoleColor_kYellow, "\n");
 }
 
-void ncsdk_Logger_Error(const struct ncsdk_Logger* logger, const char* format,
+void ncsdk_Logger_Error(const struct ncsdk_Logger* self, const char* format,
                         ...) {
   char time_string[9];
   GetCurrentTimeString(time_string);
   Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
   Print(ncsdk_Logger_ConsoleColor_kRed, "ERROR [%s] ",
-        logger->logging_namespace);
+        self->logging_namespace);
 
   va_list args;
   va_start(args, format);

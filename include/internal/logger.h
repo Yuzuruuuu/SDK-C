@@ -14,7 +14,7 @@ struct ncsdk_Logger* ncsdk_Logger_New(const char* logging_namespace);
 
 /// @brief Deletes a logger instance.
 /// @param logger The logger instance to delete.
-void ncsdk_Logger_Delete(struct ncsdk_Logger* logger);
+void ncsdk_Logger_Delete(struct ncsdk_Logger* self);
 
 #ifdef __cplusplus
 }

@@ -9,7 +9,7 @@ struct ncsdk_Client;
 
 struct ncsdk_Client* ncsdk_Client_New(const char* host, int port);
 
-void ncsdk_Client_Delete(struct ncsdk_Client* client);
+void ncsdk_Client_Delete(struct ncsdk_Client* self);
 
 #ifdef __cplusplus
 }
