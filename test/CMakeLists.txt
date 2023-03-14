@@ -19,12 +19,14 @@ enable_testing()
 
 aux_source_directory(. TEST_LIST)
 
-add_executable(ncsdk_test ${TEST_LIST})
+add_executable(${PROJECT_NAME} ${TEST_LIST})
 
-target_link_libraries(ncsdk_test GTest::gtest_main)
+unset(TEST_LIST)
+
+target_link_libraries(${PROJECT_NAME} GTest::gtest_main)
 
 include(GoogleTest)
-gtest_discover_tests(ncsdk_test)
+gtest_discover_tests(${PROJECT_NAME})
 
 target_include_directories(ncsdk_test PUBLIC
                            ${CMAKE_CURRENT_BINARY_DIR}
@@ -34,4 +36,4 @@ target_include_directories(ncsdk_test PUBLIC
 
 add_subdirectory(../src ncsdk)
 
-target_link_libraries(ncsdk_test ncsdk)
+target_link_libraries(${PROJECT_NAME} ncsdk)

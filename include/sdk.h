@@ -14,7 +14,6 @@ extern "C" {
 #include "entity_source.h"
 #include "logger.h"
 
-
 /// @brief Gets the agent representing the player controlled by the user.
 /// @return The agent.
 struct ncsdk_Agent *ncsdk_GetAgent();
@@ -48,6 +47,9 @@ int ncsdk_GetTicksPerSecond();
 /// @brief Initializes the SDK.
 /// @param argc The number of arguments.
 void ncsdk_Initialize(int argc, char *argv[]);
+
+/// @brief Finalizes the SDK.
+void ncsdk_Finalize();
 
 #ifdef __cplusplus
 }

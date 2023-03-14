@@ -1,3 +1,14 @@
 cmake_minimum_required(VERSION 3.14)
 
 project(ncsdk_examples)
+
+add_subdirectory(../src ncsdk)
+
+# log_messages
+aux_source_directory(./log_messages SRC_LIST)
+
+add_executable(log_messages ${SRC_LIST})
+
+target_link_libraries(log_messages ncsdk)
+
+unset(SRC_LIST)
