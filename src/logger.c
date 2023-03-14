@@ -40,7 +40,10 @@ static void Print(enum ncsdk_Logger_ConsoleColor color,
 
 void ncsdk_Logger_Debug(const struct ncsdk_Logger* logger, const char* format,
                         ...) {
-#ifdef DEBUG
+#ifndef DEBUG
+  return;
+#endif
+
   char time_string[9];
   GetCurrentTimeString(time_string);
   Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
@@ -53,7 +56,6 @@ void ncsdk_Logger_Debug(const struct ncsdk_Logger* logger, const char* format,
   va_end(args);
 
   Print(ncsdk_Logger_ConsoleColor_kGray, "\n");
-#endif
 }
 
 void ncsdk_Logger_Info(const struct ncsdk_Logger* logger, const char* format,
