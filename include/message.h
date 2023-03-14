@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-#include "json.h/json.h"
+#include "json.h"
 
 
 /// @brief Represents the transmission direction of the message.

@@ -4,3 +4,6 @@
 [submodule "third_party/argparse"]
 	path = third_party/argparse
 	url = https://github.com/cofyc/argparse.git
+[submodule "third_party/wic"]
+	path = third_party/wic
+	url = https://github.com/NovelCraft/wic.git

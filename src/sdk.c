@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-#include "argparse/argparse.h"
+#include "argparse.h"
 #include "internal/logger.h"
 #include "logger.h"
 #include "types.h"
