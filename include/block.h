@@ -1,14 +1,11 @@
 /// @file block.h
 /// @brief NovelCraft Block interfaces
 
-#ifndef NOVELCRAFT_SDK_BLOCK_H_
-#define NOVELCRAFT_SDK_BLOCK_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-
 
 /// @struct ncsdk_Block
 /// @brief Represents a block.
@@ -28,5 +25,3 @@ int ncsdk_Block_GetTypeId(const struct ncsdk_Block* block);
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_BLOCK_H_

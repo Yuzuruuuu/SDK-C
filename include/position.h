@@ -1,14 +1,11 @@
 /// @file position.h
 /// @brief NovelCraft Position interfaces
 
-#ifndef NOVELCRAFT_SDK_POSITION_H_
-#define NOVELCRAFT_SDK_POSITION_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-
 
 /// @brief Represents a position with integer values in the world.
 struct ncsdk_Position_Int {
@@ -23,5 +20,3 @@ struct ncsdk_Position_Float {
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_POSITION_H_

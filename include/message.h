@@ -1,15 +1,11 @@
 /// @file message.h
 /// @brief NovelCraft Message interfaces
 
-#ifndef NOVELCRAFT_SDK_MESSAGE_H_
-#define NOVELCRAFT_SDK_MESSAGE_H_
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #include "json.h"
-
 
 /// @brief Represents the transmission direction of the message.
 enum ncsdk_Message_BoundToKind {
@@ -84,5 +80,3 @@ enum ncsdk_Message_MessageKind ncsdk_Message_GetType(
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_MESSAGE_H_

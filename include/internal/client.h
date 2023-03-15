@@ -1,5 +1,4 @@
-#ifndef NOVELCRAFT_SDK_INTERNAL_CLIENT_H_
-#define NOVELCRAFT_SDK_INTERNAL_CLIENT_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,5 +13,3 @@ void ncsdk_Client_Delete(struct ncsdk_Client* self);
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_INTERNAL_CLIENT_H_

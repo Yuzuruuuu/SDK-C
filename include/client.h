@@ -1,15 +1,13 @@
 /// @file client.h
 /// @brief NovelCraft Client interfaces
 
-#ifndef NOVELCRAFT_SDK_CLIENT_H_
-#define NOVELCRAFT_SDK_CLIENT_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #include "message.h"
-
 
 /// @struct ncsdk_Client
 /// @brief Represents a client that can connect to a server.
@@ -25,10 +23,8 @@ void ncsdk_Client_RegisterMessageHandler(
 /// @param client The client.
 /// @param message The message.
 void ncsdk_Client_Send(struct ncsdk_Client* self,
-                                    const struct ncsdk_Message* message);
+                       const struct ncsdk_Message* message);
 
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_CLIENT_H_

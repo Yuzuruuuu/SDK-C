@@ -5,7 +5,6 @@
 #include <string.h>
 
 #include "internal/client.h"
-#include "internal/logger.h"
 #include "logger.h"
 
 struct ncsdk_Client {

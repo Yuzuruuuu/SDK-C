@@ -3,9 +3,8 @@
 #include <stdlib.h>
 
 #include "argparse.h"
-#include "internal/logger.h"
 #include "logger.h"
-#include "optional_value.h"
+#include "optional.h"
 
 #define GET_INFO_INVERNAL 10000
 #define PING_INTERVAL 1000
@@ -14,9 +13,9 @@ static struct ncsdk_Agent *agent_ = NULL;
 static struct ncsdk_BlockSource *block_source_ = NULL;
 static struct ncsdk_Client *client_ = NULL;
 static struct ncsdk_EntitySource *entity_source_ = NULL;
-static ncsdk_OptionalFloat latency_ = {0.0f, false};
+static ncsdk_Optional(float) latency_ = {0.0f, false};
 static struct ncsdk_Logger *sdk_logger_ = NULL;
-static ncsdk_OptionalFloat ticks_per_second_ = {0.0f, false};
+static ncsdk_Optional(float) ticks_per_second_ = {0.0f, false};
 static struct ncsdk_Logger *user_logger_ = NULL;
 static char *token_ = NULL;
 

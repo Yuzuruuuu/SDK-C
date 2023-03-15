@@ -1,15 +1,13 @@
 /// @file entity_source.h
 /// @brief NovelCraft EntitySource interfaces
 
-#ifndef NOVELCRAFT_SDK_ENTITY_SOURCE_H_
-#define NOVELCRAFT_SDK_ENTITY_SOURCE_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #include "entity.h"
-
 
 /// @struct ncsdk_EntitySource
 /// @brief Represents a collection of entities.
@@ -25,5 +23,3 @@ const struct ncsdk_Entity* ncsdk_EntitySource_Get(
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_ENTITY_SOURCE_H_

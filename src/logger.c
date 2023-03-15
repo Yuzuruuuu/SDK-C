@@ -9,8 +9,6 @@
 #include <windows.h>
 #endif
 
-#include "internal/logger.h"
-
 #define TIME_STRING_LENGTH 9
 
 struct ncsdk_Logger {
@@ -110,8 +108,7 @@ void ncsdk_Logger_Error(const struct ncsdk_Logger* self, const char* format,
   char time_string[9];
   GetCurrentTimeString(time_string);
   Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
-  Print(ncsdk_Logger_ConsoleColor_kRed, "ERROR [%s] ",
-        self->logging_namespace);
+  Print(ncsdk_Logger_ConsoleColor_kRed, "ERROR [%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);

@@ -12,8 +12,6 @@ int main(int argc, char *argv[]) {
   ncsdk_Logger_Warn(logger, "Warn message");
   ncsdk_Logger_Error(logger, "Error message");
 
-  printf("Hello, World");
-
   ncsdk_Finalize();
 
   return 0;

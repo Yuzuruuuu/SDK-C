@@ -1,14 +1,11 @@
 /// @file block_source.h
 /// @brief NovelCraft BlockSource interfaces
 
-#ifndef NOVELCRAFT_SDK_BLOCK_SOURCE_H_
-#define NOVELCRAFT_SDK_BLOCK_SOURCE_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-
 
 /// @struct ncsdk_BlockSource
 /// @brief Represents a collection of blocks.
@@ -25,5 +22,3 @@ const struct ncsdk_Block* ncsdk_BlockSource_Get(
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_BLOCK_SOURCE_H_

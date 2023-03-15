@@ -1,9 +1,6 @@
 /// @file sdk.h
 /// @brief NovelCraft SDK interfaces
 
-#ifndef NOVELCRAFT_SDK_SDK_H_
-#define NOVELCRAFT_SDK_SDK_H_
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -11,6 +8,7 @@ extern "C" {
 #include "agent.h"
 #include "block_source.h"
 #include "client.h"
+#include "disable_stdio.h"
 #include "entity_source.h"
 #include "logger.h"
 
@@ -54,5 +52,3 @@ void ncsdk_Finalize();
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_SDK_H_

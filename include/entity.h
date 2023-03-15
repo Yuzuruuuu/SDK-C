@@ -1,13 +1,11 @@
 /// @file entity.h
 /// @brief NovelCraft Entity interfaces
 
-#ifndef NOVELCRAFT_SDK_ENTITY_H_
-#define NOVELCRAFT_SDK_ENTITY_H_
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 
 #include "orientation.h"
 #include "position.h"
@@ -41,5 +39,3 @@ int ncsdk_Entity_GetUniqueId(const struct ncsdk_Entity* entity);
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // NOVELCRAFT_SDK_ENTITY_H_
