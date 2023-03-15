@@ -25,12 +25,14 @@ ncsdk_Array* ncsdk_Array_NewWithElementSize(size_t element_size, size_t capacity
 /// @param self The array
 void ncsdk_Array_Delete(ncsdk_Array* self);
 
-/// @brief Accesses specified element with bounds checking.
+#define ncsdk_Array_At(type) (type*)ncsdk_Array_AtWithoutType
+
+/// @brief Accesses specified element with bounds checking without type.
 /// @param self The array
 /// @param index The index of the element to access
 /// @return The element at specified position. If index is out of range, the
 /// value is NULL.
-void* ncsdk_Array_At(ncsdk_Array* self, size_t index);
+void* ncsdk_Array_AtWithoutType(ncsdk_Array* self, size_t index);
 
 /// @brief Fills the array with the specified value.
 /// @param self The array

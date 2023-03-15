@@ -1,6 +1,7 @@
 #include "logger.h"
 
 #include <stdarg.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -29,12 +30,12 @@ enum ncsdk_Logger_ConsoleColor {
 /// @param time_string The time string.
 static void GetCurrentTimeString(char time_string[9]);
 
-/// @brief Prints a message with the specified color.
-/// @param color The color to use.
-/// @param format The format string.
-/// @param ... The arguments.
-static void Print(enum ncsdk_Logger_ConsoleColor color, const char* format,
-                  ...);
+/// @brief Sets the console color.
+/// @param color The color to set.
+static void SetColor(enum ncsdk_Logger_ConsoleColor color);
+
+/// @brief Unsets the console color.
+static void UnsetColor();
 
 struct ncsdk_Logger* ncsdk_Logger_New(const char* logging_namespace) {
   struct ncsdk_Logger* self =
@@ -59,63 +60,74 @@ void ncsdk_Logger_Debug(const struct ncsdk_Logger* self, const char* format,
 
   char time_string[9];
   GetCurrentTimeString(time_string);
-  Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
-  Print(ncsdk_Logger_ConsoleColor_kGray, "DEBUG [%s] ",
-        self->logging_namespace);
+  SetColor(ncsdk_Logger_ConsoleColor_kCyan);
+  printf_s("%s ", time_string);
+  SetColor(ncsdk_Logger_ConsoleColor_kGray);
+  printf_s("DEBUG [%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
-  Print(ncsdk_Logger_ConsoleColor_kGray, format, args);
+  vprintf_s(format, args);
   va_end(args);
 
-  Print(ncsdk_Logger_ConsoleColor_kGray, "\n");
+  putchar('\n');
+  UnsetColor();
 }
 
 void ncsdk_Logger_Info(const struct ncsdk_Logger* self, const char* format,
                        ...) {
   char time_string[9];
   GetCurrentTimeString(time_string);
-  Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
-  Print(ncsdk_Logger_ConsoleColor_kBlue, "INFO  ");
-  Print(ncsdk_Logger_ConsoleColor_kWhite, "[%s] ", self->logging_namespace);
+  SetColor(ncsdk_Logger_ConsoleColor_kCyan);
+  printf_s("%s ", time_string);
+  SetColor(ncsdk_Logger_ConsoleColor_kBlue);
+  printf_s("INFO  ");
+  SetColor(ncsdk_Logger_ConsoleColor_kWhite);
+  printf_s("[%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
-  Print(ncsdk_Logger_ConsoleColor_kWhite, format, args);
+  vprintf_s(format, args);
   va_end(args);
 
-  Print(ncsdk_Logger_ConsoleColor_kWhite, "\n");
+  putchar('\n');
+  UnsetColor();
 }
 
 void ncsdk_Logger_Warn(const struct ncsdk_Logger* self, const char* format,
                        ...) {
   char time_string[9];
   GetCurrentTimeString(time_string);
-  Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
-  Print(ncsdk_Logger_ConsoleColor_kYellow, "WARN  [%s] ",
-        self->logging_namespace);
+  SetColor(ncsdk_Logger_ConsoleColor_kCyan);
+  printf_s("%s ", time_string);
+  SetColor(ncsdk_Logger_ConsoleColor_kYellow);
+  printf_s("WARN  [%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
-  Print(ncsdk_Logger_ConsoleColor_kYellow, format, args);
+  vprintf_s(format, args);
   va_end(args);
 
-  Print(ncsdk_Logger_ConsoleColor_kYellow, "\n");
+  putchar('\n');
+  UnsetColor();
 }
 
 void ncsdk_Logger_Error(const struct ncsdk_Logger* self, const char* format,
                         ...) {
   char time_string[9];
   GetCurrentTimeString(time_string);
-  Print(ncsdk_Logger_ConsoleColor_kCyan, "%s ", time_string);
-  Print(ncsdk_Logger_ConsoleColor_kRed, "ERROR [%s] ", self->logging_namespace);
+  SetColor(ncsdk_Logger_ConsoleColor_kCyan);
+  printf_s("%s ", time_string);
+  SetColor(ncsdk_Logger_ConsoleColor_kRed);
+  printf_s("WARN  [%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
-  Print(ncsdk_Logger_ConsoleColor_kRed, format, args);
+  vprintf_s(format, args);
   va_end(args);
 
-  Print(ncsdk_Logger_ConsoleColor_kRed, "\n");
+  putchar('\n');
+  UnsetColor();
 }
 
 static void GetCurrentTimeString(char time_string[TIME_STRING_LENGTH]) {
@@ -123,8 +135,7 @@ static void GetCurrentTimeString(char time_string[TIME_STRING_LENGTH]) {
   strftime(time_string, TIME_STRING_LENGTH, "%H:%M:%S", localtime(&raw_time));
 }
 
-static void Print(enum ncsdk_Logger_ConsoleColor color, const char* format,
-                  ...) {
+static void SetColor(enum ncsdk_Logger_ConsoleColor color) {
 #ifdef _WIN32
   HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
   switch (color) {
@@ -180,13 +191,11 @@ static void Print(enum ncsdk_Logger_ConsoleColor color, const char* format,
       break;
   }
 #endif
+}
 
-  va_list args;
-  va_start(args, format);
-  vprintf(format, args);
-  va_end(args);
-
+static void UnsetColor() {
 #ifdef _WIN32
+  HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
   SetConsoleTextAttribute(console_handle,
                           FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
 

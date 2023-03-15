@@ -8,7 +8,6 @@ extern "C" {
 #include "agent.h"
 #include "block_source.h"
 #include "client.h"
-#include "disable_stdio.h"
 #include "entity_source.h"
 #include "logger.h"
 

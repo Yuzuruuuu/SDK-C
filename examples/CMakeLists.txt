@@ -4,8 +4,6 @@ project(ncsdk_examples)
 
 add_subdirectory(../src ncsdk)
 
-add_compile_definitions(NO_STDIO)
-
 # log_messages
 aux_source_directory(./log_messages SRC_LIST)
 
