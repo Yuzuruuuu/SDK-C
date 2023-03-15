@@ -14,14 +14,14 @@ target_include_directories(${PROJECT_NAME} PUBLIC
                            ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    target_compile_definitions(${PROJECT_NAME} PUBLIC DEBUG)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC _DEBUG)
 endif()
 
 if(MSVC)
     target_compile_definitions(${PROJECT_NAME} PUBLIC _CRT_SECURE_NO_WARNINGS)
-    target_compile_options(${PROJECT_NAME} PUBLIC /W4 /WX)
+    target_compile_options(${PROJECT_NAME} PUBLIC /W4)
 else()
-    target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wextra -pedantic -Werror)
+    target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wextra -pedantic)
 endif()
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 11)

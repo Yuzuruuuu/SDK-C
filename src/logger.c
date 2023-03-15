@@ -53,8 +53,9 @@ void ncsdk_Logger_Delete(struct ncsdk_Logger* self) {
   free(self);
 }
 
-void ncsdk_Logger_DebugPrint(const struct ncsdk_Logger* self, const char* format,
+void ncsdk_Logger_Debug(const struct ncsdk_Logger* self, const char* format,
                         ...) {
+#ifdef _DEBUG
   char time_string[9];
   GetCurrentTimeString(time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kCyan);
@@ -69,6 +70,7 @@ void ncsdk_Logger_DebugPrint(const struct ncsdk_Logger* self, const char* format
 
   putchar('\n');
   UnsetColor();
+#endif
 }
 
 void ncsdk_Logger_Info(const struct ncsdk_Logger* self, const char* format,
