@@ -1,8 +1,8 @@
-/// @file types.h
-/// @brief Contains the definition of the types used in the project.
+/// @file optional_value.h
+/// @brief Optional value types.
 
-#ifndef NOVELCRAFT_SDK_TYPES_H_
-#define NOVELCRAFT_SDK_TYPES_H_
+#ifndef NOVELCRAFT_SDK_OPTIONAL_VALUE_H_
+#define NOVELCRAFT_SDK_OPTIONAL_VALUE_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -32,4 +32,4 @@ typedef struct {
 }
 #endif
 
-#endif  // NOVELCRAFT_SDK_TYPES_H_
+#endif  // NOVELCRAFT_SDK_OPTIONAL_VALUE_H_
