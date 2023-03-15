@@ -24,6 +24,8 @@ else()
     target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wextra -pedantic -Werror)
 endif()
 
+set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 11)
+
 # Add user-only include directories.
 target_include_directories(${PROJECT_NAME} INTERFACE
                            ${CMAKE_CURRENT_SOURCE_DIR}/../include/user_only)
