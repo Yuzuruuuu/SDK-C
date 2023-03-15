@@ -58,13 +58,13 @@ void ncsdk_Logger_DebugPrint(const struct ncsdk_Logger* self, const char* format
   char time_string[9];
   GetCurrentTimeString(time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kCyan);
-  printf_s("%s ", time_string);
+  printf("%s ", time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kGray);
-  printf_s("DEBUG [%s] ", self->logging_namespace);
+  printf("DEBUG [%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
-  vprintf_s(format, args);
+  vprintf(format, args);
   va_end(args);
 
   putchar('\n');
@@ -76,15 +76,15 @@ void ncsdk_Logger_Info(const struct ncsdk_Logger* self, const char* format,
   char time_string[9];
   GetCurrentTimeString(time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kCyan);
-  printf_s("%s ", time_string);
+  printf("%s ", time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kBlue);
-  printf_s("INFO  ");
+  printf("INFO  ");
   SetColor(ncsdk_Logger_ConsoleColor_kWhite);
-  printf_s("[%s] ", self->logging_namespace);
+  printf("[%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
-  vprintf_s(format, args);
+  vprintf(format, args);
   va_end(args);
 
   putchar('\n');
@@ -96,13 +96,13 @@ void ncsdk_Logger_Warn(const struct ncsdk_Logger* self, const char* format,
   char time_string[9];
   GetCurrentTimeString(time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kCyan);
-  printf_s("%s ", time_string);
+  printf("%s ", time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kYellow);
-  printf_s("WARN  [%s] ", self->logging_namespace);
+  printf("WARN  [%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
-  vprintf_s(format, args);
+  vprintf(format, args);
   va_end(args);
 
   putchar('\n');
@@ -114,13 +114,13 @@ void ncsdk_Logger_Error(const struct ncsdk_Logger* self, const char* format,
   char time_string[9];
   GetCurrentTimeString(time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kCyan);
-  printf_s("%s ", time_string);
+  printf("%s ", time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kRed);
-  printf_s("WARN  [%s] ", self->logging_namespace);
+  printf("WARN  [%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);
-  vprintf_s(format, args);
+  vprintf(format, args);
   va_end(args);
 
   putchar('\n');
