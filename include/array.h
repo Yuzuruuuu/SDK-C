@@ -7,6 +7,8 @@
 extern "C" {
 #endif
 
+#include <stddef.h>
+
 struct ncsdk_Array;
 typedef struct ncsdk_Array ncsdk_Array;
 
