@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 #ifdef _WIN32
@@ -52,12 +53,8 @@ void ncsdk_Logger_Delete(struct ncsdk_Logger* self) {
   free(self);
 }
 
-void ncsdk_Logger_Debug(const struct ncsdk_Logger* self, const char* format,
+void ncsdk_Logger_DebugPrint(const struct ncsdk_Logger* self, const char* format,
                         ...) {
-#ifndef DEBUG
-  return;
-#endif
-
   char time_string[9];
   GetCurrentTimeString(time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kCyan);

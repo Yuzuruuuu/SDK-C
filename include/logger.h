@@ -22,12 +22,27 @@ struct ncsdk_Logger* ncsdk_Logger_New(const char* logging_namespace);
 /// @param logger The logger instance to delete.
 void ncsdk_Logger_Delete(struct ncsdk_Logger* self);
 
+#ifdef DEBUG
+/// @brief Logs a debug message conditionally.
+/// @param self The logger instance.
+/// @param format The message format.
+/// @param ... The format arguments.
+#define ncsdk_Logger_Debug(self, format, ...) \
+  ncsdk_Logger_DebugPrint(self, format, __VA_ARGS__)
+#else
+/// @brief Logs a debug message conditionally.
+/// @param self The logger instance.
+/// @param format The message format.
+/// @param ... The format arguments.
+#define ncsdk_Logger_Debug(self, format, ...)
+#endif
+
 /// @brief Logs a debug message.
 /// @param self The logger instance.
 /// @param format The message format.
 /// @param ... The format arguments.
-void ncsdk_Logger_Debug(const struct ncsdk_Logger* self, const char* format,
-                        ...);
+void ncsdk_Logger_DebugPrint(const struct ncsdk_Logger* self,
+                             const char* format, ...);
 
 /// @brief Logs an info message.
 /// @param self The logger instance.
