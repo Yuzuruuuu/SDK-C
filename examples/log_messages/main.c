@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "sdk.h"
 
 int main(int argc, char *argv[]) {
