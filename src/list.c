@@ -1,5 +1,6 @@
 #include "list.h"
 
+#include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -54,8 +55,7 @@ void ncsdk_List_Fill(ncsdk_List* self, void* value) {
   ncsdk_Array_Fill(self->array, value);
 }
 
-void ncsdk_List_Insert(ncsdk_List* self, size_t index,
-                                  const void* element) {
+void ncsdk_List_Insert(ncsdk_List* self, size_t index, const void* element) {
   if (index > self->size) {
     return;
   }

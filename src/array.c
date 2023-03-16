@@ -1,5 +1,6 @@
 #include "array.h"
 
+#include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -9,8 +10,7 @@ struct ncsdk_Array {
   size_t element_size;
 };
 
-ncsdk_Array* ncsdk_Array_NewWithElementSize(size_t element_size,
-                                            size_t size) {
+ncsdk_Array* ncsdk_Array_NewWithElementSize(size_t element_size, size_t size) {
   ncsdk_Array* array = malloc(sizeof(ncsdk_Array));
   array->data = calloc(size, element_size);
   array->size = size;
@@ -22,7 +22,7 @@ void ncsdk_Array_Delete(ncsdk_Array** self) {
   if (*self == NULL) {
     return;
   }
-  
+
   free((*self)->data);
   free(*self);
   *self = NULL;
