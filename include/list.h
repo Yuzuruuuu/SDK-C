@@ -55,11 +55,7 @@ void ncsdk_List_Erase(ncsdk_List* self, size_t index);
 /// @param self The list
 /// @param index The index of the element to insert before
 /// @param value The value to insert into the list
-#define ncsdk_List_Insert(self, index, value)                        \
-  ncsdk_List_InsertWithoutType((ncsdk_List*)(self), (size_t)(index), \
-                               (const void*)(value))
-
-void ncsdk_List_InsertWithoutType(ncsdk_List* self, size_t index,
+void ncsdk_List_Insert(ncsdk_List* self, size_t index,
                                   const void* element);
 
 /// @brief Removes the last element of the list.
@@ -69,10 +65,7 @@ void ncsdk_List_PopBack(ncsdk_List* self);
 /// @brief Adds an element to the end of the list.
 /// @param self The list
 /// @param value The value to add to the list
-#define ncsdk_List_PushBack(self, value) \
-  ncsdk_List_PushBackWithoutType((ncsdk_List*)(self), (const void*)(value))
-
-void ncsdk_List_PushBackWithoutType(ncsdk_List* self, const void* element);
+void ncsdk_List_PushBack(ncsdk_List* self, const void* element);
 
 /// @brief Returns the number of elements in the list.
 /// @param self The list

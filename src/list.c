@@ -54,7 +54,7 @@ void ncsdk_List_Fill(ncsdk_List* self, void* value) {
   ncsdk_Array_Fill(self->array, value);
 }
 
-void ncsdk_List_InsertWithoutType(ncsdk_List* self, size_t index,
+void ncsdk_List_Insert(ncsdk_List* self, size_t index,
                                   const void* element) {
   if (index > self->size) {
     return;
@@ -83,7 +83,7 @@ void ncsdk_List_PopBack(ncsdk_List* self) {
   self->size = self->size > 0 ? self->size - 1 : 0;
 }
 
-void ncsdk_List_PushBackWithoutType(ncsdk_List* self, const void* element) {
+void ncsdk_List_PushBack(ncsdk_List* self, const void* element) {
   if (self->size >= ncsdk_Array_Size(self->array)) {
     ncsdk_Array* new_array = ncsdk_Array_NewWithElementSize(
         self->element_size, ncsdk_Array_Size(self->array) * 2);
