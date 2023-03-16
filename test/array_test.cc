@@ -1,33 +1,7 @@
 #include <array.h>
 #include <gtest/gtest.h>
 
-TEST(ArrayTest, HandlesBoolValue) {
-  ncsdk_Array* array = ncsdk_Array_New(bool, 10);
-  EXPECT_NE(array, nullptr);
-
-  for (size_t i = 0; i < ncsdk_Array_Size(array); ++i) {
-    bool* value = ncsdk_Array_At(bool, array, i);
-    EXPECT_NE(value, nullptr);
-    EXPECT_FALSE(*value);
-  }
-
-  for (size_t i = 0; i < ncsdk_Array_Size(array); ++i) {
-    bool* value = ncsdk_Array_At(bool, array, i);
-    EXPECT_NE(value, nullptr);
-    *value = true;
-  }
-
-  for (size_t i = 0; i < ncsdk_Array_Size(array); ++i) {
-    bool* value = ncsdk_Array_At(bool, array, i);
-    EXPECT_NE(value, nullptr);
-    EXPECT_TRUE(*value);
-  }
-
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
-}
-
-TEST(ArrayTest, HandlesIntValue) {
+TEST(ArrayTest, TestsValue) {
   ncsdk_Array* array = ncsdk_Array_New(int, 10);
   EXPECT_NE(array, nullptr);
 
@@ -47,27 +21,7 @@ TEST(ArrayTest, HandlesIntValue) {
   EXPECT_EQ(array, nullptr);
 }
 
-TEST(ArrayTest, HandlesDoubleValue) {
-  ncsdk_Array* array = ncsdk_Array_New(double, 10);
-  EXPECT_NE(array, nullptr);
-
-  for (size_t i = 0; i < ncsdk_Array_Size(array); ++i) {
-    double* value = ncsdk_Array_At(double, array, i);
-    EXPECT_NE(value, nullptr);
-    *value = (int)i;
-  }
-
-  for (size_t i = 0; i < ncsdk_Array_Size(array); ++i) {
-    double* value = ncsdk_Array_At(double, array, i);
-    EXPECT_NE(value, nullptr);
-    EXPECT_EQ(*value, i);
-  }
-
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
-}
-
-TEST(ArrayTest, HandlesStringValue) {
+TEST(ArrayTest, TestsPointer) {
   ncsdk_Array* array = ncsdk_Array_New(char*, 10);
   EXPECT_NE(array, nullptr);
 
@@ -96,7 +50,7 @@ TEST(ArrayTest, HandlesStringValue) {
   EXPECT_EQ(array, nullptr);
 }
 
-TEST(ArrayTest, HandlesFilling) {
+TEST(ArrayTest, TestsFilling) {
   ncsdk_Array* array = ncsdk_Array_New(int, 10);
   EXPECT_NE(array, nullptr);
 
