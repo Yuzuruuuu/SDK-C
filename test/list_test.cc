@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <list.h>
+#include <stdlib.h>
 
 TEST(ListTest, HandlesNormalValue) {
   ncsdk_List* list = ncsdk_List_New(int);
