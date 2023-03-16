@@ -26,10 +26,6 @@ endif()
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 11)
 
-# Add user-only include directories.
-target_include_directories(${PROJECT_NAME} INTERFACE
-                           ${CMAKE_CURRENT_SOURCE_DIR}/../include/user_only)
-
 target_include_directories(${PROJECT_NAME} PUBLIC
                            ${CMAKE_CURRENT_SOURCE_DIR}/../third_party/json.h)
 

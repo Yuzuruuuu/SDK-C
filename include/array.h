@@ -13,27 +13,28 @@ struct ncsdk_Array;
 typedef struct ncsdk_Array ncsdk_Array;
 
 /// @brief Creates a new array.
+/// @param type The type of the element
 /// @param capacity The initial capacity of the array
 /// @return The new array
-#define ncsdk_Array_New(type, capacity) ncsdk_Array_NewWithElementSize(sizeof(type), capacity)
+#define ncsdk_Array_New(type, capacity) \
+  ncsdk_Array_NewWithElementSize(sizeof(type), capacity)
 
-/// @brief Creates a new array with specified element size.
-/// @param element_size The size of each element in the array
-/// @param capacity The initial capacity of the array
-/// @return The new array
-ncsdk_Array* ncsdk_Array_NewWithElementSize(size_t element_size, size_t capacity);
+ncsdk_Array* ncsdk_Array_NewWithElementSize(size_t element_size,
+                                            size_t capacity);
 
 /// @brief Destroys an array.
-/// @param self The array
-void ncsdk_Array_Delete(ncsdk_Array* self);
+/// @param self A pointer to the array
+void ncsdk_Array_Delete(ncsdk_Array** self);
 
-#define ncsdk_Array_At(type) (type*)ncsdk_Array_AtWithoutType
-
-/// @brief Accesses specified element with bounds checking without type.
+/// @brief Accesses specified element with bounds checking.
+/// @param type The type of the element
 /// @param self The array
 /// @param index The index of the element to access
 /// @return The element at specified position. If index is out of range, the
 /// value is NULL.
+#define ncsdk_Array_At(type, self, index) \
+  (type*)ncsdk_Array_AtWithoutType((ncsdk_Array*)self, (size_t)index)
+
 void* ncsdk_Array_AtWithoutType(ncsdk_Array* self, size_t index);
 
 /// @brief Fills the array with the specified value.

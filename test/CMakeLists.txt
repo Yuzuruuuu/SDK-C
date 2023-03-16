@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.14)
 
 project(ncsdk_test)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+add_subdirectory(../src ncsdk)
+
 
 include(FetchContent)
 FetchContent_Declare(
@@ -17,23 +18,16 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-aux_source_directory(. TEST_LIST)
 
-add_executable(${PROJECT_NAME} ${TEST_LIST})
+aux_source_directory(. SRC_LIST)
 
-unset(TEST_LIST)
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+
 
 target_link_libraries(${PROJECT_NAME} GTest::gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(${PROJECT_NAME})
 
-target_include_directories(ncsdk_test PUBLIC
-                           ${CMAKE_CURRENT_BINARY_DIR}
-                           ${CMAKE_CURRENT_SOURCE_DIR}/../include
-                           ${CMAKE_CURRENT_SOURCE_DIR}/../third_party
-                           )
-
-add_subdirectory(../src ncsdk)
 
 target_link_libraries(${PROJECT_NAME} ncsdk)

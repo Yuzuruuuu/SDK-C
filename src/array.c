@@ -18,9 +18,14 @@ ncsdk_Array* ncsdk_Array_NewWithElementSize(size_t element_size,
   return array;
 }
 
-void ncsdk_Array_Delete(ncsdk_Array* self) {
-  free(self->data);
-  free(self);
+void ncsdk_Array_Delete(ncsdk_Array** self) {
+  if (*self == NULL) {
+    return;
+  }
+  
+  free((*self)->data);
+  free(*self);
+  *self = NULL;
 }
 
 void* ncsdk_Array_AtWithoutType(ncsdk_Array* self, size_t index) {
