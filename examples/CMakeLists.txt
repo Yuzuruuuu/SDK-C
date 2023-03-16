@@ -15,4 +15,16 @@ aux_source_directory(./log_messages SRC_LIST)
 
 add_executable(log_messages ${SRC_LIST})
 
+unset(SRC_LIST)
+
 target_link_libraries(log_messages ncsdk)
+
+
+# handle_exceptions
+aux_source_directory(./handle_exceptions SRC_LIST)
+
+add_executable(handle_exceptions ${SRC_LIST})
+
+unset(SRC_LIST)
+
+target_link_libraries(handle_exceptions ncsdk)

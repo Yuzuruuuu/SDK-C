@@ -118,7 +118,7 @@ void ncsdk_Logger_Error(const struct ncsdk_Logger* self, const char* format,
   SetColor(ncsdk_Logger_ConsoleColor_kCyan);
   printf("%s ", time_string);
   SetColor(ncsdk_Logger_ConsoleColor_kRed);
-  printf("WARN  [%s] ", self->logging_namespace);
+  printf("ERROR [%s] ", self->logging_namespace);
 
   va_list args;
   va_start(args, format);

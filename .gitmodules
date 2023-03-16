@@ -7,3 +7,6 @@
 [submodule "third_party/libwebsockets"]
 	path = third_party/libwebsockets
 	url = https://github.com/NovelCraft/libwebsockets.git
+[submodule "third_party/exceptions4c"]
+	path = third_party/exceptions4c
+	url = https://github.com/NovelCraft/exceptions4c.git

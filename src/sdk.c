@@ -1,5 +1,6 @@
 #include "sdk.h"
 
+#include <e4c.h>
 #include <stdlib.h>
 
 #include "argparse.h"
@@ -22,6 +23,8 @@ static char *token_ = NULL;
 const struct ncsdk_Logger *ncsdk_GetLogger() { return sdk_logger_; }
 
 void ncsdk_Initialize(int argc, char *argv[]) {
+  e4c_context_begin(E4C_TRUE);
+
   sdk_logger_ = ncsdk_Logger_New("Sdk");
   user_logger_ = ncsdk_Logger_New("User");
 
@@ -56,4 +59,6 @@ void ncsdk_Finalize() {
 
   ncsdk_Logger_Delete(sdk_logger_);
   sdk_logger_ = NULL;
+
+  e4c_context_end();
 }
