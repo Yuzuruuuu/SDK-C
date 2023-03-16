@@ -17,9 +17,8 @@ TEST(ListTest, TestsValue) {
     EXPECT_EQ(*value, i);
   }
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, TestsPointer) {
   ncsdk_List* list = ncsdk_List_New(int*);
@@ -38,9 +37,8 @@ TEST(ListTest, TestsPointer) {
     delete *value;
   }
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, TestsClearing) {
   ncsdk_List* list = ncsdk_List_New(int);
@@ -56,9 +54,8 @@ TEST(ListTest, TestsClearing) {
 
   EXPECT_EQ(ncsdk_List_Size(list), 0);
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, TestsErasure) {
   ncsdk_List* list = ncsdk_List_New(int);
@@ -79,9 +76,8 @@ TEST(ListTest, TestsErasure) {
     }
   }
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, TestsFilling) {
   ncsdk_List* list = ncsdk_List_New(int);
@@ -101,9 +97,8 @@ TEST(ListTest, TestsFilling) {
     EXPECT_EQ(*v, 0);
   }
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, TestsInsertion) {
   ncsdk_List* list = ncsdk_List_New(int);
@@ -133,9 +128,8 @@ TEST(ListTest, TestsInsertion) {
   v = ncsdk_List_At(int, list, 11);
   EXPECT_EQ(*v, 2);
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, TestsPopBack) {
   ncsdk_List* list = ncsdk_List_New(int);
@@ -154,9 +148,8 @@ TEST(ListTest, TestsPopBack) {
 
   EXPECT_EQ(ncsdk_List_Size(list), 0);
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, TestsSize) {
   ncsdk_List* list = ncsdk_List_New(int);
@@ -169,9 +162,8 @@ TEST(ListTest, TestsSize) {
     EXPECT_EQ(ncsdk_List_Size(list), i + 1);
   }
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, HandlesMassivePushBack) {
   ncsdk_List* list = ncsdk_List_New(int);
@@ -188,9 +180,8 @@ TEST(ListTest, HandlesMassivePushBack) {
     EXPECT_EQ(*value, i);
   }
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }
 
 TEST(ListTest, HandlesRandomPushAndPopWithoutCheck) {
   ncsdk_List* list = ncsdk_List_New(int);
@@ -210,6 +201,5 @@ TEST(ListTest, HandlesRandomPushAndPopWithoutCheck) {
     }
   }
 
-  ncsdk_List_Delete(&list);
-  EXPECT_EQ(list, nullptr);
-}
+  ncsdk_List_Delete(list);
+  }

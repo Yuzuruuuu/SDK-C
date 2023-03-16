@@ -23,7 +23,7 @@ ncsdk_Queue* ncsdk_Queue_NewWithElementSize(size_t element_size);
 
 /// @brief Destroys an queue.
 /// @param self A pointer to the queue
-void ncsdk_Queue_Delete(ncsdk_Queue** self);
+void ncsdk_Queue_Delete(ncsdk_Queue* self);
 
 /// @brief Accesses the last element.
 /// @param type The type of the elements in the queue

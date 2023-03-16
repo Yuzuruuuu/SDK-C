@@ -17,9 +17,8 @@ TEST(StackTest, TestsValue) {
     EXPECT_EQ(ncsdk_Stack_Size(stack), 9 - i);
   }
 
-  ncsdk_Stack_Delete(&stack);
-  EXPECT_EQ(stack, nullptr);
-}
+  ncsdk_Stack_Delete(stack);
+  }
 
 TEST(StackTest, TestsPointer) {
   ncsdk_Stack* stack = ncsdk_Stack_New(char*);
@@ -36,9 +35,8 @@ TEST(StackTest, TestsPointer) {
     EXPECT_EQ(ncsdk_Stack_Size(stack), 9 - i);
   }
 
-  ncsdk_Stack_Delete(&stack);
-  EXPECT_EQ(stack, nullptr);
-}
+  ncsdk_Stack_Delete(stack);
+  }
 
 TEST(StackTest, TestsTop) {
   ncsdk_Stack* stack = ncsdk_Stack_New(int);

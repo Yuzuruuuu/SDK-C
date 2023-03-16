@@ -23,7 +23,7 @@ ncsdk_Stack* ncsdk_Stack_NewWithElementSize(size_t element_size);
 
 /// @brief Destroys an stack.
 /// @param self A pointer to the stack
-void ncsdk_Stack_Delete(ncsdk_Stack** self);
+void ncsdk_Stack_Delete(ncsdk_Stack* self);
 
 /// @brief Removes the top element.
 /// @param self The stack

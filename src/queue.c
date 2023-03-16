@@ -15,14 +15,9 @@ ncsdk_Queue* ncsdk_Queue_NewWithElementSize(size_t element_size) {
   return queue;
 }
 
-void ncsdk_Queue_Delete(ncsdk_Queue** self) {
-  if (*self == NULL) {
-    return;
-  }
-
-  ncsdk_List_Delete(&(*self)->list);
-  free(*self);
-  *self = NULL;
+void ncsdk_Queue_Delete(ncsdk_Queue* self) {
+  ncsdk_List_Delete(self->list);
+  free(self);
 }
 
 void* ncsdk_Queue_BackWithoutType(ncsdk_Queue* self) {

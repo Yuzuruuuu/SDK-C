@@ -26,7 +26,7 @@ ncsdk_List* ncsdk_List_NewWithElementSize(size_t element_size);
 
 /// @brief Destroys an list.
 /// @param self A pointer to the list
-void ncsdk_List_Delete(ncsdk_List** self);
+void ncsdk_List_Delete(ncsdk_List* self);
 
 /// @brief Accesses specified element with bounds checking.
 /// @param type The type of the elements in the list

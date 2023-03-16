@@ -8,6 +8,7 @@ extern "C" {
 #endif
 
 #include <stdbool.h>
+#include <time.h>
 
 /// @brief Defines an optional value type.
 /// @param type The type of the optional value.
@@ -30,6 +31,11 @@ struct ncsdk_Optional_int {
 
 struct ncsdk_Optional_float {
   float value;
+  bool has_value;
+};
+
+struct ncsdk_Optional_time_t {
+  time_t value;
   bool has_value;
 };
 

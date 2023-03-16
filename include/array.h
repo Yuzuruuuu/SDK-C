@@ -26,7 +26,7 @@ ncsdk_Array* ncsdk_Array_NewWithElementSize(size_t element_size,
 
 /// @brief Destroys an array.
 /// @param self A pointer to the array
-void ncsdk_Array_Delete(ncsdk_Array** self);
+void ncsdk_Array_Delete(ncsdk_Array* self);
 
 /// @brief Accesses specified element with bounds checking.
 /// @param type The type of the element

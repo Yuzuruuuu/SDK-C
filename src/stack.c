@@ -15,14 +15,9 @@ ncsdk_Stack* ncsdk_Stack_NewWithElementSize(size_t element_size) {
   return stack;
 }
 
-void ncsdk_Stack_Delete(ncsdk_Stack** self) {
-  if (*self == NULL) {
-    return;
-  }
-
-  ncsdk_List_Delete(&(*self)->list);
-  free(*self);
-  *self = NULL;
+void ncsdk_Stack_Delete(ncsdk_Stack* self) {
+  ncsdk_List_Delete(self->list);
+  free(self);
 }
 
 void ncsdk_Stack_Pop(ncsdk_Stack* self) {

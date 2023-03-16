@@ -23,15 +23,10 @@ ncsdk_Dictionary* ncsdk_Dictionary_NewWithElementSizes(size_t key_size,
   return dictionary;
 }
 
-void ncsdk_Dictionary_Delete(ncsdk_Dictionary** self) {
-  if (*self == NULL) {
-    return;
-  }
-
-  ncsdk_List_Delete(&(*self)->key_list);
-  ncsdk_List_Delete(&(*self)->value_list);
-  free(*self);
-  *self = NULL;
+void ncsdk_Dictionary_Delete(ncsdk_Dictionary* self) {
+  ncsdk_List_Delete(self->key_list);
+  ncsdk_List_Delete(self->value_list);
+  free(self);
 }
 
 void* ncsdk_Dictionary_AtWithoutType(ncsdk_Dictionary* self, const void* key) {

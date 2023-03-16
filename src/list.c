@@ -20,14 +20,9 @@ ncsdk_List* ncsdk_List_NewWithElementSize(size_t element_size) {
   return list;
 }
 
-void ncsdk_List_Delete(ncsdk_List** self) {
-  if (*self == NULL) {
-    return;
-  }
-
-  ncsdk_Array_Delete(&(*self)->array);
-  free(*self);
-  *self = NULL;
+void ncsdk_List_Delete(ncsdk_List* self) {
+  ncsdk_Array_Delete(self->array);
+  free(self);
 }
 
 void* ncsdk_List_AtWithoutType(ncsdk_List* self, size_t index) {
@@ -66,7 +61,7 @@ void ncsdk_List_Insert(ncsdk_List* self, size_t index, const void* element) {
     memcpy(ncsdk_Array_AtWithoutType(new_array, 0),
            ncsdk_Array_AtWithoutType(self->array, 0),
            ncsdk_Array_Size(self->array) * self->element_size);
-    ncsdk_Array_Delete(&self->array);
+    ncsdk_Array_Delete(self->array);
     self->array = new_array;
   }
 
@@ -90,7 +85,7 @@ void ncsdk_List_PushBack(ncsdk_List* self, const void* element) {
     memcpy(ncsdk_Array_AtWithoutType(new_array, 0),
            ncsdk_Array_AtWithoutType(self->array, 0),
            ncsdk_Array_Size(self->array) * self->element_size);
-    ncsdk_Array_Delete(&self->array);
+    ncsdk_Array_Delete(self->array);
     self->array = new_array;
   }
 

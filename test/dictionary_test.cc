@@ -19,9 +19,8 @@ TEST(DictionaryTest, TestsValueToValue) {
     EXPECT_EQ(*v, i);
   }
 
-  ncsdk_Dictionary_Delete(&dict);
-  EXPECT_EQ(dict, nullptr);
-}
+  ncsdk_Dictionary_Delete(dict);
+  }
 
 TEST(DictionaryTest, TestsClear) {
   ncsdk_Dictionary* dict = ncsdk_Dictionary_New(int, int);
@@ -37,9 +36,8 @@ TEST(DictionaryTest, TestsClear) {
   ncsdk_Dictionary_Clear(dict);
   EXPECT_EQ(ncsdk_Dictionary_Size(dict), 0);
 
-  ncsdk_Dictionary_Delete(&dict);
-  EXPECT_EQ(dict, nullptr);
-}
+  ncsdk_Dictionary_Delete(dict);
+  }
 
 TEST(DictionaryTest, TestsContains) {
   ncsdk_Dictionary* dict = ncsdk_Dictionary_New(int, int);
@@ -62,9 +60,8 @@ TEST(DictionaryTest, TestsContains) {
     EXPECT_FALSE(ncsdk_Dictionary_Contains(dict, &k));
   }
 
-  ncsdk_Dictionary_Delete(&dict);
-  EXPECT_EQ(dict, nullptr);
-}
+  ncsdk_Dictionary_Delete(dict);
+  }
 
 TEST(DictionaryTest, TestsErase) {
   ncsdk_Dictionary* dict = ncsdk_Dictionary_New(int, int);
@@ -83,9 +80,8 @@ TEST(DictionaryTest, TestsErase) {
     EXPECT_EQ(ncsdk_Dictionary_Size(dict), 9 - i);
   }
 
-  ncsdk_Dictionary_Delete(&dict);
-  EXPECT_EQ(dict, nullptr);
-}
+  ncsdk_Dictionary_Delete(dict);
+  }
 
 TEST(DictionaryTest, HandlesErasureNonExistent) {
   ncsdk_Dictionary* dict = ncsdk_Dictionary_New(int, int);
@@ -104,9 +100,8 @@ TEST(DictionaryTest, HandlesErasureNonExistent) {
     EXPECT_EQ(ncsdk_Dictionary_Size(dict), 10);
   }
 
-  ncsdk_Dictionary_Delete(&dict);
-  EXPECT_EQ(dict, nullptr);
-}
+  ncsdk_Dictionary_Delete(dict);
+  }
 
 TEST(DictionaryTest, HandlesErasureAfterClear) {
   ncsdk_Dictionary* dict = ncsdk_Dictionary_New(int, int);
@@ -128,9 +123,8 @@ TEST(DictionaryTest, HandlesErasureAfterClear) {
     EXPECT_EQ(ncsdk_Dictionary_Size(dict), 0);
   }
 
-  ncsdk_Dictionary_Delete(&dict);
-  EXPECT_EQ(dict, nullptr);
-}
+  ncsdk_Dictionary_Delete(dict);
+  }
 
 TEST(DictionaryTest, HandlesKeyNotFound) {
   ncsdk_Dictionary* dict = ncsdk_Dictionary_New(int, int);
@@ -149,9 +143,8 @@ TEST(DictionaryTest, HandlesKeyNotFound) {
     EXPECT_EQ(v, nullptr);
   }
 
-  ncsdk_Dictionary_Delete(&dict);
-  EXPECT_EQ(dict, nullptr);
-}
+  ncsdk_Dictionary_Delete(dict);
+  }
 
 TEST(DictionaryTest, HandlesDuplicatedInsertion) {
   ncsdk_Dictionary* dict = ncsdk_Dictionary_New(int, int);
@@ -177,6 +170,5 @@ TEST(DictionaryTest, HandlesDuplicatedInsertion) {
     EXPECT_EQ(*v, i + 1);
   }
 
-  ncsdk_Dictionary_Delete(&dict);
-  EXPECT_EQ(dict, nullptr);
-}
+  ncsdk_Dictionary_Delete(dict);
+  }

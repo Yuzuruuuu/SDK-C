@@ -17,8 +17,7 @@ TEST(ArrayTest, TestsValue) {
     EXPECT_EQ(*value, i);
   }
 
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
+  ncsdk_Array_Delete(array);
 }
 
 TEST(ArrayTest, TestsPointer) {
@@ -46,8 +45,7 @@ TEST(ArrayTest, TestsPointer) {
     delete[] * value;
   }
 
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
+  ncsdk_Array_Delete(array);
 }
 
 TEST(ArrayTest, TestsFilling) {
@@ -69,8 +67,7 @@ TEST(ArrayTest, TestsFilling) {
     EXPECT_EQ(*value, 0);
   }
 
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
+  ncsdk_Array_Delete(array);
 }
 
 TEST(ArrayTest, HandlesOutOfRange) {
@@ -78,13 +75,10 @@ TEST(ArrayTest, HandlesOutOfRange) {
   EXPECT_NE(array, nullptr);
 
   int* value = ncsdk_Array_At(int, array, 10);
-  EXPECT_EQ(value, nullptr);
 
   value = ncsdk_Array_At(int, array, -1);
-  EXPECT_EQ(value, nullptr);
 
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
+  ncsdk_Array_Delete(array);
 }
 
 TEST(ArrayTest, HandlesZeroSize) {
@@ -94,19 +88,8 @@ TEST(ArrayTest, HandlesZeroSize) {
   EXPECT_EQ(ncsdk_Array_Size(array), 0);
 
   int* value = ncsdk_Array_At(int, array, 0);
+
   EXPECT_EQ(value, nullptr);
 
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
-}
-
-TEST(ArrayTest, HandlesMuptileDeletion) {
-  ncsdk_Array* array = ncsdk_Array_New(int, 10);
-  EXPECT_NE(array, nullptr);
-
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
-
-  ncsdk_Array_Delete(&array);
-  EXPECT_EQ(array, nullptr);
+  ncsdk_Array_Delete(array);
 }

@@ -10,6 +10,14 @@ extern "C" {
 #include "client.h"
 #include "entity_source.h"
 #include "logger.h"
+#include "optional.h"
+
+/// @brief Initializes the SDK.
+/// @param argc The number of arguments.
+void ncsdk_Initialize(int argc, char *argv[]);
+
+/// @brief Finalizes the SDK.
+void ncsdk_Finalize();
 
 /// @brief Gets the agent representing the player controlled by the user.
 /// @return The agent.
@@ -34,19 +42,12 @@ const struct ncsdk_Logger *ncsdk_GetLogger();
 
 /// @brief Gets the current tick.
 /// @return The current tick. -1 if no tick information is received.
-int ncsdk_GetTick();
+ncsdk_Optional(int) ncsdk_GetTick();
 
 /// @brief Gets the number of ticks per second.
-/// @return The number of ticks per second. -1 if no tick information is
+/// @return The number of ticks per second. -1.0 if no tick information is
 /// received.
-int ncsdk_GetTicksPerSecond();
-
-/// @brief Initializes the SDK.
-/// @param argc The number of arguments.
-void ncsdk_Initialize(int argc, char *argv[]);
-
-/// @brief Finalizes the SDK.
-void ncsdk_Finalize();
+ncsdk_Optional(float) ncsdk_GetTicksPerSecond();
 
 #ifdef __cplusplus
 }

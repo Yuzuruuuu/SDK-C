@@ -27,7 +27,7 @@ ncsdk_Dictionary* ncsdk_Dictionary_NewWithElementSizes(size_t key_size,
 
 /// @brief Destroys an dictionary.
 /// @param self A pointer to the dictionary
-void ncsdk_Dictionary_Delete(ncsdk_Dictionary** self);
+void ncsdk_Dictionary_Delete(ncsdk_Dictionary* self);
 
 /// @brief Accesses the value associated with a key.
 /// @param value_type The type of the values in the dictionary

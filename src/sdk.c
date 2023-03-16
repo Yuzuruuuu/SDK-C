@@ -2,6 +2,7 @@
 
 #include <e4c.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "argparse.h"
 #include "logger.h"
@@ -14,6 +15,8 @@ static struct ncsdk_Agent *agent_ = NULL;
 static struct ncsdk_BlockSource *block_source_ = NULL;
 static struct ncsdk_Client *client_ = NULL;
 static struct ncsdk_EntitySource *entity_source_ = NULL;
+static ncsdk_Optional(int) last_tick_ = {-1, false};
+static ncsdk_Optional(time_t) last_tick_time_ = {0, false};
 static ncsdk_Optional(float) latency_ = {0.0f, false};
 static struct ncsdk_Logger *sdk_logger_ = NULL;
 static ncsdk_Optional(float) ticks_per_second_ = {0.0f, false};
@@ -62,3 +65,28 @@ void ncsdk_Finalize() {
 
   e4c_context_end();
 }
+
+struct ncsdk_Agent *ncsdk_GetAgent() { return agent_; }
+
+const struct ncsdk_BlockSource *ncsdk_GetBlocks() { return block_source_; }
+
+struct ncsdk_Client *ncsdk_GetClient() { return client_; }
+
+const struct ncsdk_EntitySource *ncsdk_GetEntities() { return entity_source_; }
+
+const struct ncsdk_Logger *ncsdk_GetUserLogger() { return user_logger_; }
+
+ncsdk_Optional(int) ncsdk_GetTick() {
+  if (!last_tick_.has_value || !last_tick_time_.has_value) {
+    return (ncsdk_Optional(int)){-1, false};
+  }
+
+  if (!ticks_per_second_.has_value) {
+    return last_tick_;
+  }
+
+  double elapsed = difftime(time(NULL), last_tick_time_.value);
+  return (ncsdk_Optional(int)){last_tick_.value + (int)(elapsed * ticks_per_second_.value), true};
+}
+
+ncsdk_Optional(float) ncsdk_GetTicksPerSecond() { return ticks_per_second_; }

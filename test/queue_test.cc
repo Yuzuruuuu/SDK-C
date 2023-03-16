@@ -17,9 +17,8 @@ TEST(QueueTest, TestsValue) {
     EXPECT_EQ(ncsdk_Queue_Size(queue), 9 - i);
   }
 
-  ncsdk_Queue_Delete(&queue);
-  EXPECT_EQ(queue, nullptr);
-}
+  ncsdk_Queue_Delete(queue);
+  }
 
 TEST(QueueTest, TestsPointer) {
   ncsdk_Queue* queue = ncsdk_Queue_New(char*);
@@ -36,9 +35,8 @@ TEST(QueueTest, TestsPointer) {
     EXPECT_EQ(ncsdk_Queue_Size(queue), 9 - i);
   }
 
-  ncsdk_Queue_Delete(&queue);
-  EXPECT_EQ(queue, nullptr);
-}
+  ncsdk_Queue_Delete(queue);
+  }
 
 TEST(QueueTest, TestsFrontAndBack) {
   ncsdk_Queue* queue = ncsdk_Queue_New(int);
@@ -59,9 +57,8 @@ TEST(QueueTest, TestsFrontAndBack) {
     ncsdk_Queue_Pop(queue);
   }
 
-  ncsdk_Queue_Delete(&queue);
-  EXPECT_EQ(queue, nullptr);
-}
+  ncsdk_Queue_Delete(queue);
+  }
 
 TEST(QueueTest, HandlesRandomPushAndPopWithoutCheck) {
   ncsdk_Queue* queue = ncsdk_Queue_New(int);
@@ -82,6 +79,5 @@ TEST(QueueTest, HandlesRandomPushAndPopWithoutCheck) {
     }
   }
 
-  ncsdk_Queue_Delete(&queue);
-  EXPECT_EQ(queue, nullptr);
-}
+  ncsdk_Queue_Delete(queue);
+  }
