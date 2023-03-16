@@ -9,6 +9,8 @@ extern "C" {
 
 #include <stddef.h>
 
+/// @struct ncsdk_List
+/// @brief List provides a dynamic array.
 struct ncsdk_List;
 typedef struct ncsdk_List ncsdk_List;
 

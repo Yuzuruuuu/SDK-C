@@ -9,6 +9,8 @@ extern "C" {
 
 #include <stddef.h>
 
+/// @struct ncsdk_Stack
+/// @brief Stack provides a stack data structure.
 struct ncsdk_Stack;
 typedef struct ncsdk_Stack ncsdk_Stack;
 

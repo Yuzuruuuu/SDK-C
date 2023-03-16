@@ -9,6 +9,8 @@ extern "C" {
 
 #include <stddef.h>
 
+/// @struct ncsdk_Queue
+/// @brief Queue provides a queue data structure.
 struct ncsdk_Queue;
 typedef struct ncsdk_Queue ncsdk_Queue;
 

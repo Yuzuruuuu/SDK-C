@@ -10,6 +10,8 @@ extern "C" {
 #include <stdbool.h>
 #include <stddef.h>
 
+/// @struct ncsdk_Dictionary
+/// @brief Dictionary provides a generic dictionary implementation.
 struct ncsdk_Dictionary;
 typedef struct ncsdk_Dictionary ncsdk_Dictionary;
 

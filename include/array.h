@@ -9,6 +9,8 @@ extern "C" {
 
 #include <stddef.h>
 
+/// @struct ncsdk_Array
+/// @brief Represents an array.
 struct ncsdk_Array;
 typedef struct ncsdk_Array ncsdk_Array;
 
