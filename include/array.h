@@ -14,13 +14,13 @@ typedef struct ncsdk_Array ncsdk_Array;
 
 /// @brief Creates a new array.
 /// @param type The type of the element
-/// @param capacity The initial capacity of the array
+/// @param size The initial size of the array
 /// @return The new array
-#define ncsdk_Array_New(type, capacity) \
-  ncsdk_Array_NewWithElementSize(sizeof(type), capacity)
+#define ncsdk_Array_New(type, size) \
+  ncsdk_Array_NewWithElementSize(sizeof(type), size)
 
 ncsdk_Array* ncsdk_Array_NewWithElementSize(size_t element_size,
-                                            size_t capacity);
+                                            size_t size);
 
 /// @brief Destroys an array.
 /// @param self A pointer to the array

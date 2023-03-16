@@ -32,7 +32,8 @@ void ncsdk_List_Delete(ncsdk_List** self);
 /// @param index The index of the element to access
 /// @return The element at specified position. If index is out of range, the
 /// value is NULL.
-#define ncsdk_List_At(type) (type*)ncsdk_List_AtWithoutType
+#define ncsdk_List_At(type, self, index) \
+  (type*)ncsdk_List_AtWithoutType((ncsdk_List*)(self), (size_t)(index))
 
 void* ncsdk_List_AtWithoutType(ncsdk_List* self, size_t index);
 
@@ -40,9 +41,24 @@ void* ncsdk_List_AtWithoutType(ncsdk_List* self, size_t index);
 /// @param self The list
 void ncsdk_List_Clear(ncsdk_List* self);
 
-#define ncsdk_List_PushBack(type) 
+/// @brief Fills the list with the specified value.
+/// @param self The list
+/// @param value The value to fill the list with
+void ncsdk_List_Fill(ncsdk_List* self, void* value);
 
-void ncsdk_List_PushBackWithoutType(ncsdk_List* self, const void* element, size_t element_size);
+/// @brief Removes the last element of the list.
+/// @param self The list
+void ncsdk_List_PopBack(ncsdk_List* self);
+
+/// @brief Adds an element to the end of the list.
+/// @param self The list
+/// @param value The value to add to the list
+#define ncsdk_List_PushBack(self, value)                                    \
+  ncsdk_List_PushBackWithoutType((ncsdk_List*)(self), (const void*)(value), \
+                                 sizeof(*(value)))
+
+void ncsdk_List_PushBackWithoutType(ncsdk_List* self, const void* element,
+                                    size_t element_size);
 
 /// @brief Returns the number of elements in the list.
 /// @param self The list
