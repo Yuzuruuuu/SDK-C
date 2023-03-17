@@ -18,6 +18,9 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Setup Ninja
+        uses: ashutoshvarma/setup-ninja@v1.1
+
       - name: (Ubuntu or MacOS) Build with CMake
         if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
