@@ -24,13 +24,13 @@ jobs:
       - name: (Ubuntu or MacOS) Build with CMake
         if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
-          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -DE4C_THREADSAFE= -G Ninja
+          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -G Ninja
           cmake --build build
 
       - name: (Windows) Build with CMake
         if: matrix.os == 'windows-latest'
         run: |
-          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -DE4C_THREADSAFE= -G Ninja
+          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -G Ninja
           cmake --build build --config Release
 
       - name: Upload artifacts
