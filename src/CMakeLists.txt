@@ -20,6 +20,8 @@ endif()
 
 if(MSVC)
     target_compile_definitions(${PROJECT_NAME} PUBLIC _CRT_SECURE_NO_WARNINGS)
+    string(REGEX REPLACE "/W3" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+    target_compile_options(${PROJECT_NAME} PUBLIC /W4)
 else()
     target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wextra -pedantic)
 endif()
