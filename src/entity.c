@@ -5,25 +5,25 @@
 #include "orientation.h"
 #include "position.h"
 
-ncsdk_Entity *ncsdk_Entity_New(ncsdk_Orientation orientation,
-                               ncsdk_Position(float) position, int type_id,
+ncsdk_Entity *ncsdk_Entity_New(const ncsdk_Orientation* orientation,
+                               const ncsdk_Position(float)* position, int type_id,
                                int unique_id) {
   ncsdk_Entity *entity = malloc(sizeof(ncsdk_Entity));
-  entity->orientation = orientation;
-  entity->position = position;
+  entity->orientation = *orientation;
+  entity->position = *position;
   entity->type_id = type_id;
   entity->unique_id = unique_id;
   return entity;
 }
 
-void ncsdk_Entity_Delete(ncsdk_Entity *entity) { free(entity); }
+void ncsdk_Entity_Delete(ncsdk_Entity* entity) { free(entity); }
 
 const ncsdk_Orientation *ncsdk_Entity_GetOrientation(
     const ncsdk_Entity *entity) {
   return &entity->orientation;
 }
 
-const ncsdk_Position(float) *
+const ncsdk_Position(float)*
     ncsdk_Entity_GetPosition(const ncsdk_Entity *entity) {
   return &entity->position;
 }

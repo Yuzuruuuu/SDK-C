@@ -15,14 +15,13 @@ struct ncsdk_Entity {
 };
 typedef struct ncsdk_Entity ncsdk_Entity;
 
-ncsdk_Entity* ncsdk_Entity_New(ncsdk_Orientation orientation,
-                               ncsdk_Position(float) position, int type_id,
-                               int unique_id);
+ncsdk_Entity* ncsdk_Entity_New(const ncsdk_Orientation* orientation,
+                               const ncsdk_Position(float) * position,
+                               int type_id, int unique_id);
 
 void ncsdk_Entity_Delete(ncsdk_Entity* self);
 
-const ncsdk_Orientation* ncsdk_Entity_GetOrientation(
-    const ncsdk_Entity* self);
+const ncsdk_Orientation* ncsdk_Entity_GetOrientation(const ncsdk_Entity* self);
 
 const ncsdk_Position(float) *
     ncsdk_Entity_GetPosition(const ncsdk_Entity* self);
