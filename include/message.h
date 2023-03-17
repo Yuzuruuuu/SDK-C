@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include "json.h"
+#include <json.h>
 
 /// @brief Represents the transmission direction of the message.
 enum ncsdk_Message_BoundToKind {
@@ -14,6 +14,9 @@ enum ncsdk_Message_BoundToKind {
 
   /// @brief The message is sent from the server to the client.
   ncsdk_Message_BoundToKind_ClientBound,
+
+  /// @brief The message's bound-to kind is unknown.
+  ncsdk_Message_BoundToKind_Unknown
 };
 
 /// @brief Represents the message's type.
@@ -46,7 +49,10 @@ enum ncsdk_Message_MessageKind {
   ncsdk_Message_MessageKind_PerformRotate,
   ncsdk_Message_MessageKind_PerformSwapSlots,
   ncsdk_Message_MessageKind_PerformSwitchMainHandSlot,
-  ncsdk_Message_MessageKind_PerformUse
+  ncsdk_Message_MessageKind_PerformUse,
+
+  /// @brief The message's message kind is unknown.
+  ncsdk_Message_MessageKind_Unknown
 };
 
 /// @struct ncsdk_Message
@@ -54,23 +60,32 @@ enum ncsdk_Message_MessageKind {
 struct ncsdk_Message;
 typedef struct ncsdk_Message ncsdk_Message;
 
+/// @brief Creates a new message.
+/// @param json_string The JSON representation of the message.
+/// @return The message.
+struct ncsdk_Message* ncsdk_Message_New(const char* json_string);
+
+/// @brief Deletes a message.
+/// @param self The message.
+void ncsdk_Message_Delete(struct ncsdk_Message* self);
+
 /// @brief Gets the JSON representation of the message.
-/// @param message The message.
+/// @param self The message.
 /// @return The JSON representation of the message.
 const struct json_value_s* ncsdk_Message_GetJson(
-    const struct ncsdk_Message* message);
+    const struct ncsdk_Message* self);
 
 /// @brief Gets the message's bound-to kind.
-/// @param message The message.
+/// @param self The message.
 /// @return The message's bound-to kind.
 enum ncsdk_Message_BoundToKind ncsdk_Message_GetBoundTo(
-    const struct ncsdk_Message* message);
+    const struct ncsdk_Message* self);
 
 /// @brief Gets the message's message kind.
-/// @param message The message.
+/// @param self The message.
 /// @return The message's message kind.
 enum ncsdk_Message_MessageKind ncsdk_Message_GetType(
-    const struct ncsdk_Message* message);
+    const struct ncsdk_Message* self);
 
 #ifdef __cplusplus
 }

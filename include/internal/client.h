@@ -4,11 +4,13 @@
 extern "C" {
 #endif
 
-#include "internal/message.h"
+#include "list.h"
+#include "message.h"
 
 struct ncsdk_Client {
+  float bandwidth;
   struct ncsdk_Logger* logger;
-  char* url;
+  ncsdk_List* message_handlers;
 };
 typedef struct ncsdk_Client ncsdk_Client;
 

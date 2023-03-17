@@ -1,4 +1,3 @@
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -7,7 +6,10 @@ extern "C" {
 
 enum ncsdk_Message_BoundToKind {
   ncsdk_Message_BoundToKind_ServerBound,
+
   ncsdk_Message_BoundToKind_ClientBound,
+
+  ncsdk_Message_BoundToKind_Unknown
 };
 
 enum ncsdk_Message_MessageKind {
@@ -39,7 +41,9 @@ enum ncsdk_Message_MessageKind {
   ncsdk_Message_MessageKind_PerformRotate,
   ncsdk_Message_MessageKind_PerformSwapSlots,
   ncsdk_Message_MessageKind_PerformSwitchMainHandSlot,
-  ncsdk_Message_MessageKind_PerformUse
+  ncsdk_Message_MessageKind_PerformUse,
+
+  ncsdk_Message_MessageKind_Unknown
 };
 
 struct ncsdk_Message {

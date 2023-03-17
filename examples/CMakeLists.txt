@@ -28,3 +28,13 @@ add_executable(handle_exceptions ${SRC_LIST})
 unset(SRC_LIST)
 
 target_link_libraries(handle_exceptions ncsdk)
+
+
+# run_client
+aux_source_directory(./run_client SRC_LIST)
+
+add_executable(run_client ${SRC_LIST})
+
+unset(SRC_LIST)
+
+target_link_libraries(run_client ncsdk)

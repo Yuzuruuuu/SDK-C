@@ -5,7 +5,6 @@ project(ncsdk)
 # Add dependencies.
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../third_party/argparse argparse)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../third_party/exceptions4c exceptions4c)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../third_party/libwebsockets libwebsockets)
 
 aux_source_directory(. SRC_LIST)
 
@@ -30,4 +29,4 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 11)
 target_include_directories(${PROJECT_NAME} PUBLIC
                            ${CMAKE_CURRENT_SOURCE_DIR}/../third_party/json.h)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC argparse exceptions4c websockets)
+target_link_libraries(${PROJECT_NAME} PUBLIC argparse exceptions4c)
