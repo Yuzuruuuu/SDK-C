@@ -8,6 +8,7 @@ extern "C" {
 #endif
 
 #include "entity.h"
+#include "list.h"
 
 /// @struct ncsdk_EntitySource
 /// @brief Represents a collection of entities.
@@ -19,7 +20,13 @@ typedef struct ncsdk_EntitySource ncsdk_EntitySource;
 /// @param unique_id The unique ID.
 /// @return The entity, or NULL if not found.
 const ncsdk_Entity* ncsdk_EntitySource_GetEntity(
-    const ncsdk_EntitySource* entity_source, int unique_id);
+    const ncsdk_EntitySource* self, int unique_id);
+
+/// @brief Gets all entities.
+/// @param self The entity source.
+/// @return The list of entities.
+const ncsdk_List* ncsdk_EntitySource_GetAllEntities(
+    const ncsdk_EntitySource* self);
 
 #ifdef __cplusplus
 }

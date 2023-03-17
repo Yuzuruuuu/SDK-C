@@ -14,6 +14,11 @@ extern "C" {
 struct ncsdk_Client;
 typedef struct ncsdk_Client ncsdk_Client;
 
+/// @brief Gets the bandwidth in Mbps.
+/// @param self The client.
+/// @return The bandwidth in Mbps.
+float ncsdk_Client_GetBandwidth(ncsdk_Client* self);
+
 /// @brief Registers a message handler.
 /// @param client The client.
 /// @param handler The handler.
