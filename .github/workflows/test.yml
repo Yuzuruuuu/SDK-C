@@ -18,10 +18,20 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Build with CMake
+      - name: Setup Ninja
+        uses: ashutoshvarma/setup-ninja@v1.1
+
+      - name: (Ubuntu or MacOS) Build with CMake
+        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
-          cmake -S test -B build
+          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -G Ninja
           cmake --build build
+
+      - name: (Windows) Build with CMake
+        if: matrix.os == 'windows-latest'
+        run: |
+          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -G Ninja
+          cmake --build build --config Release
 
       - name: Run tests
         run: |
