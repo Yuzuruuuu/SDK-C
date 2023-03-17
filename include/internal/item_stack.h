@@ -15,6 +15,10 @@ struct ncsdk_ItemStack* ncsdk_ItemStack_New(int type_id, int count);
 
 void ncsdk_ItemStack_Delete(struct ncsdk_ItemStack* self);
 
+int ncsdk_ItemStack_GetCount(const struct ncsdk_ItemStack* self);
+
+int ncsdk_ItemStack_GetTypeId(const struct ncsdk_ItemStack* self);
+
 #ifdef __cplusplus
 }
 #endif

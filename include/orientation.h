@@ -7,9 +7,10 @@
 extern "C" {
 #endif
 
-typedef struct {
+struct ncsdk_Orientation {
   float yaw, pitch;
-} ncsdk_Orientation;
+};
+typedef struct ncsdk_Orientation ncsdk_Orientation;
 
 #ifdef __cplusplus
 }

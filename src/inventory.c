@@ -1,9 +1,10 @@
-#include "inventory.h"
+
+
+#include "internal/inventory.h"
 
 #include <stdlib.h>
 
 #include "array.h"
-#include "internal/inventory.h"
 #include "internal/item_stack.h"
 
 #define SIZE 36

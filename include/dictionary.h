@@ -10,6 +10,8 @@ extern "C" {
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "list.h"
+
 /// @struct ncsdk_Dictionary
 /// @brief Dictionary provides a generic dictionary implementation.
 struct ncsdk_Dictionary;
@@ -62,6 +64,16 @@ void ncsdk_Dictionary_Erase(ncsdk_Dictionary* self, const void* key);
 /// @param value The value to insert into the dictionary
 void ncsdk_Dictionary_Insert(ncsdk_Dictionary* self, const void* key,
                              const void* value);
+
+/// @brief Gets the keys in the dictionary.
+/// @param self The dictionary
+/// @return The keys in the dictionary
+const ncsdk_List* ncsdk_Dictionary_GetKeys(ncsdk_Dictionary* self);
+
+/// @brief Gets the values in the dictionary.
+/// @param self The dictionary
+/// @return The values in the dictionary
+const ncsdk_List* ncsdk_Dictionary_GetValues(ncsdk_Dictionary* self);
 
 /// @brief Returns the number of elements.
 /// @param self The dictionary

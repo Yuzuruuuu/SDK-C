@@ -10,9 +10,10 @@ extern "C" {
 #define ncsdk_Position(type) ncsdk_Position_##type
 
 #define NCSDK_DEFINE_POSITION(type) \
-  typedef struct {                  \
+  struct ncsdk_Position_##type {    \
     type x, y, z;                   \
-  } ncsdk_Position_##type
+  };                                \
+  typedef struct ncsdk_Position_##type ncsdk_Position_##type
 
 NCSDK_DEFINE_POSITION(int);
 NCSDK_DEFINE_POSITION(float);

@@ -64,9 +64,17 @@ void ncsdk_Dictionary_Insert(ncsdk_Dictionary* self, const void* key,
   if (ncsdk_Dictionary_Contains(self, key)) {
     ncsdk_Dictionary_Erase(self, key);
   }
-  
+
   ncsdk_List_PushBack(self->key_list, key);
   ncsdk_List_PushBack(self->value_list, value);
+}
+
+const ncsdk_List* ncsdk_Dictionary_GetKeys(ncsdk_Dictionary* self) {
+  return self->key_list;
+}
+
+const ncsdk_List* ncsdk_Dictionary_GetValues(ncsdk_Dictionary* self) {
+  return self->value_list;
 }
 
 size_t ncsdk_Dictionary_Size(ncsdk_Dictionary* self) {

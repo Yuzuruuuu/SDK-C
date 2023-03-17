@@ -15,10 +15,11 @@ extern "C" {
 #define ncsdk_Optional(type) ncsdk_Optional_##type
 
 #define NCSDK_DEFINE_OPTIONAL(type) \
-  typedef struct {                  \
+  struct ncsdk_Optional_##type {    \
     type value;                     \
     bool has_value;                 \
-  } ncsdk_Optional_##type
+  };                                \
+  typedef struct ncsdk_Optional_##type ncsdk_Optional_##type
 
 NCSDK_DEFINE_OPTIONAL(bool);
 NCSDK_DEFINE_OPTIONAL(char);

@@ -13,12 +13,23 @@ struct ncsdk_Entity {
   int type_id;
   int unique_id;
 };
+typedef struct ncsdk_Entity ncsdk_Entity;
 
-struct ncsdk_Entity *ncsdk_Entity_new(ncsdk_Orientation orientation,
-                                      ncsdk_Position(float) position,
-                                      int type_id, int unique_id);
+ncsdk_Entity* ncsdk_Entity_New(ncsdk_Orientation orientation,
+                               ncsdk_Position(float) position, int type_id,
+                               int unique_id);
 
-void ncsdk_Entity_delete(struct ncsdk_Entity *entity);
+void ncsdk_Entity_Delete(ncsdk_Entity* entity);
+
+const ncsdk_Orientation* ncsdk_Entity_GetOrientation(
+    const ncsdk_Entity* entity);
+
+const ncsdk_Position(float) *
+    ncsdk_Entity_GetPosition(const ncsdk_Entity* entity);
+
+int ncsdk_Entity_GetTypeId(const ncsdk_Entity* entity);
+
+int ncsdk_Entity_GetUniqueId(const ncsdk_Entity* entity);
 
 #ifdef __cplusplus
 }
