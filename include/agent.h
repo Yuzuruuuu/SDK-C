@@ -63,6 +63,11 @@ int ncsdk_Agent_GetTypeId(const struct ncsdk_Agent* self);
 /// @return The agent's unique ID.
 int ncsdk_Agent_GetUniqueId(const struct ncsdk_Agent* self);
 
+/// @brief Gets the agent's health.
+/// @param self The agent.
+/// @return The agent's health.
+float ncsdk_Agent_GetHealth(const struct ncsdk_Agent* self);
+
 /// @brief Gets the agent's inventory.
 /// @param self The agent.
 /// @return The agent's inventory.
@@ -84,7 +89,7 @@ void ncsdk_Agent_SetMovement(struct ncsdk_Agent* self,
 /// @brief Gets the agent's token.
 /// @param self The agent.
 /// @return The agent's token.
-const struct ncsdk_Token* ncsdk_Agent_GetToken(const struct ncsdk_Agent* self);
+const char* ncsdk_Agent_GetToken(const struct ncsdk_Agent* self);
 
 /// @brief Performs an attack.
 /// @param self The agent.
