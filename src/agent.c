@@ -2,7 +2,10 @@
 
 #include <stdlib.h>
 
-#include "inventory.h"
+#include "internal/inventory.h"
+#include "orientation.h"
+#include "position.h"
+#include "string.h"
 
 ncsdk_Agent* ncsdk_Agent_New(const char* token, int unique_id,
                              const ncsdk_Position(float) * position,
@@ -17,6 +20,7 @@ ncsdk_Agent* ncsdk_Agent_New(const char* token, int unique_id,
   strcpy(self->token, token);
   self->type_id = 0;
   self->unique_id = unique_id;
+  return self;
 }
 
 void ncsdk_Agent_Delete(ncsdk_Agent* self) {
