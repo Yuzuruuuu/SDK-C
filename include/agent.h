@@ -44,13 +44,13 @@ struct ncsdk_Agent;
 /// @brief Gets the agent's orientation.
 /// @param agent The agent.
 /// @return The agent's orientation.
-const struct ncsdk_Orientation* ncsdk_Agent_GetOrientation(
+const ncsdk_Orientation* ncsdk_Agent_GetOrientation(
     const struct ncsdk_Agent* agent);
 
 /// @brief Gets the agent's position.
 /// @param agent The agent.
 /// @return The agent's position.
-const struct ncsdk_Position_Float* ncsdk_Agent_GetPosition(
+const ncsdk_Position(float)* ncsdk_Agent_GetPosition(
     const struct ncsdk_Agent* agent);
 
 /// @brief Gets the agent's type ID.
@@ -100,7 +100,7 @@ void ncsdk_Agent_Jump(struct ncsdk_Agent* agent);
 /// @param agent The agent.
 /// @param position The position.
 void ncsdk_Agent_LookAt(struct ncsdk_Agent* agent,
-                        const struct ncsdk_Position_Float* position);
+                        const ncsdk_Position(float)* position);
 
 /// @brief Sets the agent's movement.
 /// @param agent The agent.

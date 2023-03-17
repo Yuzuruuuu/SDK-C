@@ -7,10 +7,9 @@
 extern "C" {
 #endif
 
-/// @brief Represents a direction in 3D space.
-struct ncsdk_Orientation {
+typedef struct {
   float yaw, pitch;
-};
+} ncsdk_Orientation;
 
 #ifdef __cplusplus
 }

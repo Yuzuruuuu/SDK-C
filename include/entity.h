@@ -17,13 +17,13 @@ struct ncsdk_Entity;
 /// @brief Gets the entity's orientation.
 /// @param entity The entity.
 /// @return The entity's orientation.
-const struct ncsdk_Orientation* ncsdk_Entity_GetOrientation(
+const ncsdk_Orientation* ncsdk_Entity_GetOrientation(
     const struct ncsdk_Entity* entity);
 
 /// @brief Gets the entity's position.
 /// @param entity The entity.
 /// @return The entity's position.
-const struct ncsdk_Position_Float* ncsdk_Entity_GetPosition(
+const ncsdk_Position(float)* ncsdk_Entity_GetPosition(
     const struct ncsdk_Entity* entity);
 
 /// @brief Gets the entity's type ID.

@@ -72,7 +72,7 @@ void example() {
   struct ncsdk_Agent* agent = ncsdk_GetAgent();
 
   // 获取代理的位置。
-  struct ncsdk_Position_Float* position = ncsdk_Agent_GetPosition(agent);
+  ncsdk_Position(float)* position = ncsdk_Agent_GetPosition(agent);
 
   // 如果代理的y坐标小于10，那么代理将跳转。
   if (position->y < 10) {

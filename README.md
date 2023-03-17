@@ -44,7 +44,7 @@ Here is an example:
 void example() {
   // Gets the block at (0, 0, 0).
   struct ncsdk_BlockSource* blocks = ncsdk_GetBlocks();
-  struct ncsdk_Position_Int position {
+  ncsdk_Position(int) position {
     .x = 0,
     .y = 0,
     .z = 0
@@ -55,7 +55,7 @@ void example() {
   // Gets the position of the entity with unique ID 114.
   struct ncsdk_EntitySource* entities = ncsdk_GetEntities();
   struct ncsdk_Entity* entity = ncsdk_EntitySource_Get(entities, 114);
-  struct ncsdk_Position_Float* entity_position = ncsdk_Entity_GetPosition(entity);
+  ncsdk_Position(float)* entity_position = ncsdk_Entity_GetPosition(entity);
 }
 ```
 
@@ -72,7 +72,7 @@ void example() {
   struct ncsdk_Agent* agent = ncsdk_GetAgent();
 
   // Gets the position of the agent.
-  struct ncsdk_Position_Float* position = ncsdk_Agent_GetPosition(agent);
+  ncsdk_Position(float)* position = ncsdk_Agent_GetPosition(agent);
 
   // If the y coordinate of the agent is less than 10, then the agent will jump.
   if (position->y < 10) {

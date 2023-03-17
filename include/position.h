@@ -7,15 +7,15 @@
 extern "C" {
 #endif
 
-/// @brief Represents a position with integer values in the world.
-struct ncsdk_Position_Int {
-  int x, y, z;
-};
+#define ncsdk_Position(type) ncsdk_Position_##type
 
-/// @brief Represents a position with floating point values in the world.
-struct ncsdk_Position_Float {
-  float x, y, z;
-};
+#define NCSDK_DEFINE_POSITION(type) \
+  typedef struct {                  \
+    type x, y, z;                   \
+  } ncsdk_Position_##type
+
+NCSDK_DEFINE_POSITION(int);
+NCSDK_DEFINE_POSITION(float);
 
 #ifdef __cplusplus
 }
