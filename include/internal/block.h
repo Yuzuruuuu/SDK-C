@@ -1,6 +1,3 @@
-/// @file block.h
-/// @brief NovelCraft Block interfaces
-
 #pragma once
 
 #ifdef __cplusplus
@@ -17,8 +14,8 @@ typedef struct ncsdk_Block ncsdk_Block;
 /// @brief Gets the block's position
 /// @param self The block.
 /// @return The block's position.
-const ncsdk_Position(int)* ncsdk_Block_GetPosition(
-    const ncsdk_Block* self);
+const ncsdk_Position(int) *
+    ncsdk_Block_GetPosition(const ncsdk_Block* self);
 
 /// @brief Gets the block's type ID.
 /// @param self The block.

@@ -7,19 +7,20 @@
 extern "C" {
 #endif
 
+#include "block.h"
 #include "position.h"
 
 /// @struct ncsdk_BlockSource
 /// @brief Represents a collection of blocks.
 struct ncsdk_BlockSource;
+typedef struct ncsdk_BlockSource ncsdk_BlockSource;
 
 /// @brief Gets the block at the position.
-/// @param block_source The block source.
+/// @param self The block source.
 /// @param position The position.
 /// @return The block, or NULL if not found.
-const struct ncsdk_Block* ncsdk_BlockSource_Get(
-    const struct ncsdk_BlockSource* block_source,
-    const ncsdk_Position(int) * position);
+const ncsdk_Block* ncsdk_BlockSource_Get(const ncsdk_BlockSource* self,
+                                         const ncsdk_Position(int) * position);
 
 #ifdef __cplusplus
 }
