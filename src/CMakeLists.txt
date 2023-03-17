@@ -20,7 +20,6 @@ endif()
 
 if(MSVC)
     target_compile_definitions(${PROJECT_NAME} PUBLIC _CRT_SECURE_NO_WARNINGS)
-    target_compile_options(${PROJECT_NAME} PUBLIC /W4)
 else()
     target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Wextra -pedantic)
 endif()
