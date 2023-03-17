@@ -19,6 +19,12 @@ void ncsdk_Section_Delete(ncsdk_Section* self) { free(self); }
 const ncsdk_Block* ncsdk_Section_GetBlock(const ncsdk_Section* self,
                                           const ncsdk_Position(int) *
                                               relative_position) {
+  if (relative_position->x < 0 || relative_position->x >= 16 ||
+      relative_position->y < 0 || relative_position->y >= 16 ||
+      relative_position->z < 0 || relative_position->z >= 16) {
+    return NULL;
+  }
+
   const ncsdk_Position(int)* section_position = ncsdk_Section_GetPosition(self);
   ncsdk_Position(int) absolute_position = {
       section_position->x + relative_position->x,
@@ -39,6 +45,12 @@ const ncsdk_Position(int) *
 void ncsdk_Section_SetBlock(ncsdk_Section* self,
                             const ncsdk_Position(int) * relative_position,
                             const ncsdk_Block* block) {
+  if (relative_position->x < 0 || relative_position->x >= 16 ||
+      relative_position->y < 0 || relative_position->y >= 16 ||
+      relative_position->z < 0 || relative_position->z >= 16) {
+    return;
+  }
+
   self->block_id_array[relative_position->x][relative_position->y]
                       [relative_position->z] = ncsdk_Block_GetTypeId(block);
 }
