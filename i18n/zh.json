@@ -60,11 +60,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The agent.",
-        "type": "@param agent",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The agent's orientation.",
         "type": "@return",
         "zh": "<no translation>"
@@ -72,11 +67,6 @@
     {
         "key": "Gets the agent's position.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The agent.",
-        "type": "@param agent",
         "zh": "<no translation>"
     },
     {
@@ -90,11 +80,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The agent.",
-        "type": "@param agent",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The agent's type ID.",
         "type": "@return",
         "zh": "<no translation>"
@@ -102,11 +87,6 @@
     {
         "key": "Gets the agent's unique ID.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The agent.",
-        "type": "@param agent",
         "zh": "<no translation>"
     },
     {
@@ -120,11 +100,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The agent.",
-        "type": "@param agent",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The agent's inventory.",
         "type": "@return",
         "zh": "<no translation>"
@@ -132,11 +107,6 @@
     {
         "key": "Gets the agent's movement.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The agent.",
-        "type": "@param agent",
         "zh": "<no translation>"
     },
     {
@@ -150,11 +120,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The agent.",
-        "type": "@param agent",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The movement.",
         "type": "@param movement",
         "zh": "<no translation>"
@@ -162,11 +127,6 @@
     {
         "key": "Gets the agent's token.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The agent.",
-        "type": "@param agent",
         "zh": "<no translation>"
     },
     {
@@ -180,11 +140,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The agent.",
-        "type": "@param agent",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The kind of attack.",
         "type": "@param kind",
         "zh": "<no translation>"
@@ -195,18 +150,8 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The agent.",
-        "type": "@param agent",
-        "zh": "<no translation>"
-    },
-    {
         "key": "Makes the agent look at a position.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The agent.",
-        "type": "@param agent",
         "zh": "<no translation>"
     },
     {
@@ -215,28 +160,8 @@
         "zh": "<no translation>"
     },
     {
-        "key": "Sets the agent's movement.",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The agent.",
-        "type": "@param agent",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The movement.",
-        "type": "@param movement",
-        "zh": "<no translation>"
-    },
-    {
         "key": "Performs a use action.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The agent.",
-        "type": "@param agent",
         "zh": "<no translation>"
     },
     {
@@ -260,11 +185,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The block.",
-        "type": "@param block",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The block's position.",
         "type": "@return",
         "zh": "<no translation>"
@@ -272,11 +192,6 @@
     {
         "key": "Gets the block's type ID.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The block.",
-        "type": "@param block",
         "zh": "<no translation>"
     },
     {
@@ -297,16 +212,6 @@
     {
         "key": "Gets the block at the position.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The block source.",
-        "type": "@param block_source",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The position.",
-        "type": "@param position",
         "zh": "<no translation>"
     },
     {
@@ -345,43 +250,8 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The client.",
-        "type": "@param client",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The message.",
         "type": "@param message",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "NovelCraft Config interfaces",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "Represents a configuration.",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The IP address or the host name of the server.",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The name of the agent.",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The port of the server.",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The token of the agent.",
-        "type": "@brief",
         "zh": "<no translation>"
     },
     {
@@ -415,11 +285,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The entity.",
-        "type": "@param entity",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The entity's position.",
         "type": "@return",
         "zh": "<no translation>"
@@ -430,11 +295,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The entity.",
-        "type": "@param entity",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The entity's type ID.",
         "type": "@return",
         "zh": "<no translation>"
@@ -442,11 +302,6 @@
     {
         "key": "Gets the entity's unique ID.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The entity.",
-        "type": "@param entity",
         "zh": "<no translation>"
     },
     {
@@ -500,11 +355,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The inventory.",
-        "type": "@param inventory",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The slot.",
         "type": "@param slot",
         "zh": "<no translation>"
@@ -520,11 +370,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The inventory.",
-        "type": "@param inventory",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The number of slots in the hot bar.",
         "type": "@return",
         "zh": "<no translation>"
@@ -532,11 +377,6 @@
     {
         "key": "Gets the slot that the main hand is currently in.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The inventory.",
-        "type": "@param inventory",
         "zh": "<no translation>"
     },
     {
@@ -550,11 +390,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The inventory.",
-        "type": "@param inventory",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The slot that the main hand is currently in.",
         "type": "@param slot",
         "zh": "<no translation>"
@@ -562,11 +397,6 @@
     {
         "key": "Gets the number of slots in the inventory.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The inventory.",
-        "type": "@param inventory",
         "zh": "<no translation>"
     },
     {
@@ -580,16 +410,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The inventory.",
-        "type": "@param inventory",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The slot.",
-        "type": "@param slot",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The number of items to drop.",
         "type": "@param count",
         "zh": "<no translation>"
@@ -597,11 +417,6 @@
     {
         "key": "Merges items from two slots into one slot.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The inventory.",
-        "type": "@param inventory",
         "zh": "<no translation>"
     },
     {
@@ -617,11 +432,6 @@
     {
         "key": "Swaps items between two slots.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The inventory.",
-        "type": "@param inventory",
         "zh": "<no translation>"
     },
     {
@@ -650,11 +460,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The item stack.",
-        "type": "@param item_stack",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The count of items in the stack.",
         "type": "@return",
         "zh": "<no translation>"
@@ -662,11 +467,6 @@
     {
         "key": "Gets the type ID of the items.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The item stack.",
-        "type": "@param item_stack",
         "zh": "<no translation>"
     },
     {
@@ -680,23 +480,8 @@
         "zh": "<no translation>"
     },
     {
-        "key": "Logger interface provides logging functionality.",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
         "key": "Logs a debug message.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The logger instance.",
-        "type": "@param logger",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The message to log.",
-        "type": "@param message",
         "zh": "<no translation>"
     },
     {
@@ -705,43 +490,13 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The logger instance.",
-        "type": "@param logger",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The message to log.",
-        "type": "@param message",
-        "zh": "<no translation>"
-    },
-    {
         "key": "Logs a warning message.",
         "type": "@brief",
         "zh": "<no translation>"
     },
     {
-        "key": "The logger instance.",
-        "type": "@param logger",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The message to log.",
-        "type": "@param message",
-        "zh": "<no translation>"
-    },
-    {
         "key": "Logs an error message.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The logger instance.",
-        "type": "@param logger",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The message to log.",
-        "type": "@param message",
         "zh": "<no translation>"
     },
     {
@@ -795,11 +550,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The message.",
-        "type": "@param message",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The JSON representation of the message.",
         "type": "@return",
         "zh": "<no translation>"
@@ -807,11 +557,6 @@
     {
         "key": "Gets the message's bound-to kind.",
         "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "The message.",
-        "type": "@param message",
         "zh": "<no translation>"
     },
     {
@@ -825,11 +570,6 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The message.",
-        "type": "@param message",
-        "zh": "<no translation>"
-    },
-    {
         "key": "The message's message kind.",
         "type": "@return",
         "zh": "<no translation>"
@@ -840,22 +580,7 @@
         "zh": "<no translation>"
     },
     {
-        "key": "Represents a direction in 3D space.",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
         "key": "NovelCraft Position interfaces",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "Represents a position with integer values in the world.",
-        "type": "@brief",
-        "zh": "<no translation>"
-    },
-    {
-        "key": "Represents a position with floating point values in the world.",
         "type": "@brief",
         "zh": "<no translation>"
     },
@@ -930,18 +655,593 @@
         "zh": "<no translation>"
     },
     {
-        "key": "The number of ticks per second. -1 if no tick information is",
-        "type": "@return",
-        "zh": "<no translation>"
-    },
-    {
         "key": "Initializes the SDK.",
         "type": "@brief",
         "zh": "<no translation>"
     },
     {
-        "key": "The configuration.",
-        "type": "@param config",
+        "key": "The agent.",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the agent's health.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The agent's health.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Array interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Represents an array.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Creates a new array.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The type of the element",
+        "type": "@param type",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The initial size of the array",
+        "type": "@param size",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The new array",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Destroys an array.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "A pointer to the array",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Accesses specified element with bounds checking.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The array",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The index of the element to access",
+        "type": "@param index",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The element at specified position. If index is out of range, the",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Fills the array with the specified value.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The value to fill the array with",
+        "type": "@param value",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Returns the number of elements in the array.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of elements in the array",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block.",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The block source.",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Dictionary interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Dictionary provides a generic dictionary implementation.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Creates a new dictionary.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The type of the keys in the dictionary",
+        "type": "@param key_type",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The type of the values in the dictionary",
+        "type": "@param value_type",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The new dictionary",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Destroys an dictionary.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "A pointer to the dictionary",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Accesses the value associated with a key.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The dictionary",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The key to search for",
+        "type": "@param key",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The value associated with the key. If the key is not found, the",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Removes all elements.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Checks if the dictionary contains a key.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "True if the key is found, false otherwise",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Removes an element.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Inserts an element.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The key to insert into the dictionary. If the key already exists,",
+        "type": "@param key",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The value to insert into the dictionary",
+        "type": "@param value",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the keys in the dictionary.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The keys in the dictionary",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Gets the values in the dictionary.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The values in the dictionary",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Returns the number of elements.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of elements in the dictionary",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Exception declarations",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The inventory.",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The item stack.",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "List interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "List provides a dynamic array.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Creates a new list.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The type of the elements in the list",
+        "type": "@param type",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The new list",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Creates a new list with specified element size.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The size of each element in the list",
+        "type": "@param element_size",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Destroys an list.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "A pointer to the list",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The list",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Clears the list.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Fills the list with the specified value.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The value to fill the list with",
+        "type": "@param value",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Erases the element at the specified position.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The index of the element to erase",
+        "type": "@param index",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Inserts an element into the list before the specified position.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The index of the element to insert before",
+        "type": "@param index",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The value to insert into the list",
+        "type": "@param value",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Removes the last element of the list.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Adds an element to the end of the list.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The value to add to the list",
+        "type": "@param value",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Returns the number of elements in the list.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of elements in the list",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Logger provides logging functionality.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Creates a new logger instance.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The namespace to use for logging.",
+        "type": "@param logging_namespace",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "A new logger instance.",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Deletes a logger instance.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The logger instance to delete.",
+        "type": "@param logger",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The logger instance.",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The message format.",
+        "type": "@param format",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The format arguments.",
+        "type": "@param ...",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Optional value types.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Defines an optional value type.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The type of the optional value.",
+        "type": "@param type",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Queue interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Queue provides a queue data structure.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Creates a new queue.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The type of the elements in the queue",
+        "type": "@param type",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The new queue",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Destroys an queue.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "A pointer to the queue",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Accesses the last element.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The queue",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The last element in the queue. If the queue is empty, the value is",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Accesses the first element.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The first element in the queue. If the queue is empty, the value is",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Removes the first element.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Inserts an element at the end.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The value to insert into the queue",
+        "type": "@param value",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of elements in the queue",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of arguments.",
+        "type": "@param argc",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Finalizes the SDK.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of ticks per second. -1.0 if no tick information is",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Stack interfaces",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Stack provides a stack data structure.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Creates a new stack.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The type of the elements in the stack",
+        "type": "@param type",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The new stack",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Destroys an stack.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "A pointer to the stack",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Removes the top element.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The stack",
+        "type": "@param self",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Inserts an element at the top.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The value to insert into the stack",
+        "type": "@param value",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The number of elements in the stack",
+        "type": "@return",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "Accesses the top element.",
+        "type": "@brief",
+        "zh": "<no translation>"
+    },
+    {
+        "key": "The top element in the stack. If the stack is empty, the value is",
+        "type": "@return",
         "zh": "<no translation>"
     }
 ]

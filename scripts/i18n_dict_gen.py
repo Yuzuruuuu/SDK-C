@@ -13,12 +13,15 @@ def main():
     parser.add_argument('lang', type=str, help='Language code')
     args = parser.parse_args()
 
-    entries = []
+    loaded_entries = []
+    new_entries = []
 
     # Load existing dictionary if exists
     if os.path.exists(os.path.join(script_path, '..', 'i18n', args.lang + '.json')):
         with open(os.path.join(script_path, '..', 'i18n', args.lang + '.json'), 'r', encoding='utf-8') as f:
-            entries = json.load(f)
+            loaded_entries = json.load(f)
+
+    visited = [False] * len(loaded_entries)
 
     # Extract all possible entries
     for file in os.listdir(os.path.join(script_path, '..', 'include')):
@@ -33,19 +36,29 @@ def main():
                     continue
 
                 found = False
-                for entry in entries:
+                for idx, entry in enumerate(loaded_entries + new_entries):
                     if entry['key'] == match.group(2) and entry['type'] == match.group(1):
                         found = True
+                        if idx < len(loaded_entries):
+                            visited[idx] = True
                         break
 
                 if found:
                     continue
 
-                entries.append({
+                new_entries.append({
                     'key': match.group(2),
                     'type': match.group(1),
                     args.lang: '<no translation>'
                 })
+
+    # Remove unused entries
+    saved_entries = []
+    for idx, entry in enumerate(loaded_entries):
+        if visited[idx]:
+            saved_entries.append(entry)
+
+    entries = saved_entries + new_entries
 
     # Write a JSON file
     with open(os.path.join(script_path, '..', 'i18n', args.lang + '.json'), 'w', encoding='utf-8') as f:
