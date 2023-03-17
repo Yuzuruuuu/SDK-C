@@ -38,7 +38,7 @@ const struct ncsdk_EntitySource *ncsdk_GetEntities();
 
 /// @brief Gets the latency.
 /// @return The latency.
-float ncsdk_GetLatency();
+ncsdk_Optional(float) ncsdk_GetLatency();
 
 /// @brief Gets the logger.
 /// @return The logger.

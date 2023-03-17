@@ -23,7 +23,7 @@ static ncsdk_Optional(float) ticks_per_second_ = {0.0f, false};
 static struct ncsdk_Logger *user_logger_ = NULL;
 static char *token_ = NULL;
 
-const struct ncsdk_Logger *ncsdk_GetLogger() { return sdk_logger_; }
+const struct ncsdk_Logger *ncsdk_GetSdkLogger() { return sdk_logger_; }
 
 void ncsdk_Initialize(int argc, char *argv[]) {
   e4c_context_begin(E4C_TRUE);
@@ -74,7 +74,9 @@ struct ncsdk_Client *ncsdk_GetClient() { return client_; }
 
 const struct ncsdk_EntitySource *ncsdk_GetEntities() { return entity_source_; }
 
-const struct ncsdk_Logger *ncsdk_GetUserLogger() { return user_logger_; }
+ncsdk_Optional(float) ncsdk_GetLatency() { return latency_; }
+
+const struct ncsdk_Logger *ncsdk_GetLogger() { return user_logger_; }
 
 ncsdk_Optional(int) ncsdk_GetTick() {
   if (!last_tick_.has_value || !last_tick_time_.has_value) {
