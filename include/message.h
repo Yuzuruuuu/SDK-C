@@ -54,12 +54,6 @@ enum ncsdk_Message_MessageKind {
 struct ncsdk_Message;
 typedef struct ncsdk_Message ncsdk_Message;
 
-/// @brief Parses the message from the JSON representation.
-/// @param json The JSON representation of the message.
-/// @return The message, or NULL if failed.
-const struct ncsdk_Message* ncsdk_Message_Parse(
-    const struct json_value_s* json);
-
 /// @brief Gets the JSON representation of the message.
 /// @param message The message.
 /// @return The JSON representation of the message.

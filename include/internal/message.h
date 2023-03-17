@@ -3,11 +3,10 @@
 extern "C" {
 #endif
 
-#include "json.h"
+#include <json.h>
 
 enum ncsdk_Message_BoundToKind {
   ncsdk_Message_BoundToKind_ServerBound,
-
   ncsdk_Message_BoundToKind_ClientBound,
 };
 
@@ -43,11 +42,14 @@ enum ncsdk_Message_MessageKind {
   ncsdk_Message_MessageKind_PerformUse
 };
 
-struct ncsdk_Message;
+struct ncsdk_Message {
+  struct json_value_s* json;
+};
 typedef struct ncsdk_Message ncsdk_Message;
 
-const struct ncsdk_Message* ncsdk_Message_Parse(
-    const struct json_value_s* json);
+struct ncsdk_Message* ncsdk_Message_New(const char* json_string);
+
+void ncsdk_Message_Delete(struct ncsdk_Message* self);
 
 const struct json_value_s* ncsdk_Message_GetJson(
     const struct ncsdk_Message* self);
