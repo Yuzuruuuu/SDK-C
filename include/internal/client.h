@@ -16,6 +16,8 @@ ncsdk_Client* ncsdk_Client_New(const char* host, int port);
 
 void ncsdk_Client_Delete(struct ncsdk_Client* self);
 
+float ncsdk_Client_GetBandwidth(ncsdk_Client* self);
+
 void ncsdk_Client_RegisterMessageHandler(ncsdk_Client* self,
                                          void (*handler)(const ncsdk_Message*));
 
