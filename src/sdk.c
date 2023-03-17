@@ -46,7 +46,7 @@ void ncsdk_Initialize(int argc, char *argv[]) {
 
   struct argparse argparse;
   argparse_init(&argparse, options, NULL, 0);
-  argparse_parse(&argparse, argc, argv);
+  argparse_parse(&argparse, argc, (const char **)argv);
 }
 
 void ncsdk_Finalize() {
@@ -88,7 +88,8 @@ ncsdk_Optional(int) ncsdk_GetTick() {
   }
 
   double elapsed = difftime(time(NULL), last_tick_time_.value);
-  return (ncsdk_Optional(int)){last_tick_.value + (int)(elapsed * ticks_per_second_.value), true};
+  return (ncsdk_Optional(int)){
+      last_tick_.value + (int)(elapsed * ticks_per_second_.value), true};
 }
 
 ncsdk_Optional(float) ncsdk_GetTicksPerSecond() { return ticks_per_second_; }
