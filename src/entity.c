@@ -1,14 +1,13 @@
-#include "entity.h"
+#include "internal/entity.h"
 
 #include <stdlib.h>
 
-#include "internal/entity.h"
 #include "orientation.h"
 #include "position.h"
 
 ncsdk_Entity *ncsdk_Entity_New(ncsdk_Orientation orientation,
-                                      ncsdk_Position(float) position,
-                                      int type_id, int unique_id) {
+                               ncsdk_Position(float) position, int type_id,
+                               int unique_id) {
   ncsdk_Entity *entity = malloc(sizeof(ncsdk_Entity));
   entity->orientation = orientation;
   entity->position = position;

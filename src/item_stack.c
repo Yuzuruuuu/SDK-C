@@ -1,8 +1,6 @@
-#include "item_stack.h"
+#include "internal/item_stack.h"
 
 #include <stdlib.h>
-
-#include "internal/item_stack.h"
 
 struct ncsdk_ItemStack* ncsdk_ItemStack_New(int type_id, int count) {
   struct ncsdk_ItemStack* self = malloc(sizeof(struct ncsdk_ItemStack));

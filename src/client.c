@@ -1,10 +1,9 @@
-#include "client.h"
+#include "internal/client.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "internal/client.h"
 #include "logger.h"
 
 struct ncsdk_Client* ncsdk_Client_New(const char* host, int port) {
