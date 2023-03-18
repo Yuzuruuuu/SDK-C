@@ -13,8 +13,6 @@ typedef unsigned char GoUint8;  // To match Go's uint8 type
 
 void Launch();
 
-void Terminate();
-
 GoUint8 Connect(char* c_url);
 
 void Disconnect();
