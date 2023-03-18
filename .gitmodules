@@ -7,3 +7,6 @@
 [submodule "third_party/jansson"]
 	path = third_party/jansson
 	url = https://github.com/NovelCraft/jansson.git
+[submodule "third_party/wshelper"]
+	path = third_party/wshelper
+	url = https://github.com/NovelCraft/wshelper-tooth.git

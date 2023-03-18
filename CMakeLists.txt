@@ -7,8 +7,8 @@ project(ncsdk)
 ################################################################
 # Options. You can change these options to control the build.
 ################################################################
-option(BUILD_SAMPLES "Build samples." ON)
-option(BUILD_TEST "Build test." ON)
+option(BUILD_SAMPLES "Build samples." OFF)
+option(BUILD_TEST "Build test." OFF)
 ################################################################
 
 
@@ -18,6 +18,8 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/argparse argparse)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/exceptions4c exceptions4c)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/jansson jansson)
+
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/wshelper wshelper)
 
 
 # Build NovelCraft SDK.
@@ -45,6 +47,10 @@ endif()
 set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 11)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC argparse exceptions4c jansson)
+
+if(NOT MSVC)
+    target_link_libraries(${PROJECT_NAME} PUBLIC wshelper)
+endif()
 
 
 # Build samples.
