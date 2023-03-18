@@ -1,9 +1,9 @@
-[submodule "third_party/json.h"]
-	path = third_party/json.h
-	url = https://github.com/sheredom/json.h.git
 [submodule "third_party/exceptions4c"]
 	path = third_party/exceptions4c
 	url = https://github.com/NovelCraft/exceptions4c.git
 [submodule "third_party/argparse"]
 	path = third_party/argparse
 	url = https://github.com/NovelCraft/argparse.git
+[submodule "third_party/jansson"]
+	path = third_party/jansson
+	url = https://github.com/NovelCraft/jansson.git

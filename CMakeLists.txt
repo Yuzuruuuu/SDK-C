@@ -17,6 +17,8 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/argparse argparse)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/exceptions4c exceptions4c)
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/jansson jansson)
+
 
 # Build NovelCraft SDK.
 aux_source_directory(src SRC_LIST)
@@ -42,10 +44,7 @@ endif()
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 11)
 
-target_include_directories(${PROJECT_NAME} PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/third_party/json.h)
-
-target_link_libraries(${PROJECT_NAME} PUBLIC argparse exceptions4c)
+target_link_libraries(${PROJECT_NAME} PUBLIC argparse exceptions4c jansson)
 
 
 # Build samples.

@@ -2,7 +2,7 @@
 extern "C" {
 #endif
 
-#include <json.h>
+#include <jansson.h>
 
 enum ncsdk_Message_BoundToKind {
   ncsdk_Message_BoundToKind_ServerBound,
@@ -47,7 +47,7 @@ enum ncsdk_Message_MessageKind {
 };
 
 struct ncsdk_Message {
-  struct json_value_s* json;
+  struct json_t* json;
 };
 typedef struct ncsdk_Message ncsdk_Message;
 
@@ -55,7 +55,7 @@ struct ncsdk_Message* ncsdk_Message_New(const char* json_string);
 
 void ncsdk_Message_Delete(struct ncsdk_Message* self);
 
-const struct json_value_s* ncsdk_Message_GetJson(
+const struct json_t* ncsdk_Message_GetJson(
     const struct ncsdk_Message* self);
 
 enum ncsdk_Message_BoundToKind ncsdk_Message_GetBoundTo(

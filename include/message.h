@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include <json.h>
+#include <jansson.h>
 
 /// @brief Represents the transmission direction of the message.
 enum ncsdk_Message_BoundToKind {
@@ -72,7 +72,7 @@ void ncsdk_Message_Delete(struct ncsdk_Message* self);
 /// @brief Gets the JSON representation of the message.
 /// @param self The message.
 /// @return The JSON representation of the message.
-const struct json_value_s* ncsdk_Message_GetJson(
+const struct json_t* ncsdk_Message_GetJson(
     const struct ncsdk_Message* self);
 
 /// @brief Gets the message's bound-to kind.
