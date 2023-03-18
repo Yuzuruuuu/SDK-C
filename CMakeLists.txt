@@ -19,7 +19,9 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/exceptions4c exceptions
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/jansson jansson)
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/wshelper wshelper)
+if(NOT MSVC)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/wshelper wshelper)
+endif()
 
 
 # Build NovelCraft SDK.
