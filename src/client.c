@@ -31,10 +31,7 @@ struct ncsdk_Client* ncsdk_Client_New(const char* host, int port) {
   client->url = malloc(strlen(url) + 1);
   strcpy(client->url, url);
 
-#ifdef _MSC_VER
   Launch();
-#endif
-
   TryConnect(client);
 
   return client;
@@ -42,6 +39,7 @@ struct ncsdk_Client* ncsdk_Client_New(const char* host, int port) {
 
 void ncsdk_Client_Delete(ncsdk_Client* self) {
   Disconnect();
+  Terminate();
 
   ncsdk_Logger_Delete(self->logger);
   ncsdk_List_Delete(self->message_handlers);

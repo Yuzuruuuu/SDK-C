@@ -2,61 +2,73 @@
 
 #include "internal/msvc_wshelper.h"
 
-#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
-#include <strsafe.h>
-#include <tchar.h>
 #include <windows.h>
 
-#define RECV_BUF_SIZE 1048576
+static STARTUPINFO si;
+static PROCESS_INFORMATION pi;
+static SECURITY_ATTRIBUTES sa;
+static HANDLE hStdInRead = NULL;
+static HANDLE hStdInWrite = NULL;
+static HANDLE hStdOutRead = NULL;
+static HANDLE hStdOutWrite = NULL;
 
-static HANDLE hReadStdin = NULL;
-static HANDLE hWriteStdin = NULL;
-static HANDLE hReadStdout = NULL;
-static HANDLE hWriteStdout = NULL;
+static void Read(char* buffer, DWORD* bytesRead) {
+  ReadFile(hStdOutRead, buffer, 1048576, (LPDWORD)(&bytesRead), NULL);
+}
 
-static bool Write(const char* msg);
-static bool Read(char* buffer);
+static void Write(char* buffer) {
+  DWORD bytesWritten;
+  WriteFile(hStdInWrite, buffer, (DWORD)(strlen(buffer)+1), &bytesWritten, NULL);
+}
 
 void Launch() {
-  SECURITY_ATTRIBUTES sa;
-  sa.nLength = sizeof(SECURITY_ATTRIBUTES);
-  sa.lpSecurityDescriptor = NULL;
-  sa.bInheritHandle = TRUE;
-
-  if (!CreatePipe(&hReadStdin, &hWriteStdin, &sa, 0)) {
-    printf("CreatePipe stdin failed\n");
-  }
-
-  if (!CreatePipe(&hReadStdout, &hWriteStdout, &sa, 0)) {
-    printf("CreatePipe stdout failed\n");
-  }
-
-  if (!SetHandleInformation(hWriteStdin, HANDLE_FLAG_INHERIT, 0)) {
-    printf("SetHandleInformation stdin failed\n");
-  }
-
-  if (!SetHandleInformation(hReadStdout, HANDLE_FLAG_INHERIT, 0)) {
-    printf("SetHandleInformation stdout failed\n");
-  }
-
-  STARTUPINFO si;
-  PROCESS_INFORMATION pi;
   ZeroMemory(&si, sizeof(si));
   si.cb = sizeof(si);
-  si.dwFlags = STARTF_USESTDHANDLES;
-  si.hStdOutput = hWriteStdout;
-  si.hStdError = hWriteStdout;
-  si.hStdInput = hReadStdin;
+  ZeroMemory(&pi, sizeof(pi));
 
-  char cmd[] = "wshelper.exe";
-  if (!CreateProcess(NULL, cmd, NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi)) {
-    printf("CreateProcess failed\n");
-  }
+  // Set security attributes for pipe handles
+  sa.nLength = sizeof(sa);
+  sa.bInheritHandle = TRUE;  // Allow child process to inherit handles
+  sa.lpSecurityDescriptor = NULL;
 
-  CloseHandle(hWriteStdout);
-  CloseHandle(hReadStdin);
+  // Create pipes for stdin and stdout
+  CreatePipe(&hStdInRead, &hStdInWrite, &sa,
+             0);  // Read handle, write handle, security attributes, buffer size
+  CreatePipe(&hStdOutRead, &hStdOutWrite, &sa, 0);
+
+  // Set startup info for child process
+  si.dwFlags = STARTF_USESTDHANDLES;  // Use custom handles for stdin and stdout
+  si.hStdInput = hStdInRead;          // Set stdin handle
+  si.hStdOutput = hStdOutWrite;       // Set stdout handle
+  si.hStdError = hStdOutWrite;        // Set stderr handle
+
+  // Create child process
+  CreateProcess("wshelper.exe",  // Path to executable
+                "",              // Command line arguments
+                NULL,            // Process security attributes
+                NULL,            // Thread security attributes
+                TRUE,            // Inherit handles flag
+                0,               // Creation flags
+                NULL,            // Environment block
+                NULL,            // Current directory
+                &si,             // Startup info structure
+                &pi);            // Process info structure
+
+  // Close unused pipe handles in parent process
+  CloseHandle(hStdInRead);
+  CloseHandle(hStdOutWrite);
+}
+
+void Terminate() {
+  // Close pipe handles in parent process
+  CloseHandle(hStdInWrite);
+  CloseHandle(hStdOutRead);
+
+  // Close process and thread handles
+  CloseHandle(pi.hProcess);
+  CloseHandle(pi.hThread);
 }
 
 GoUint8 Connect(char* c_url) {
@@ -68,9 +80,9 @@ GoUint8 Connect(char* c_url) {
 
   memset(buffer, 0, sizeof(buffer));
 
-  size_t bytesRead = 0;
+  DWORD bytesRead = 0;
   while (bytesRead == 0) {
-    Read(buffer);
+    Read(buffer, &bytesRead);
   }
 
   int result;
@@ -88,29 +100,28 @@ void Disconnect() {
 
   memset(buffer, 0, sizeof(buffer));
 
-  size_t bytesRead = 0;
+  DWORD bytesRead = 0;
   while (bytesRead == 0) {
-    Read(buffer);
+    Read(buffer, &bytesRead);
   }
 }
 
 GoUint8 IsConnected() {
-  printf("IsConnected\n");
+  char buffer[1024];
+  memset(buffer, 0, sizeof(buffer));
 
-  static char buffer[1024];
-  int result;
+  sprintf(buffer, "is_connected\n");
+  Write(buffer);
 
-  while (true) {
-    memset(buffer, 0, sizeof(buffer));
-    Write("is_connected\n");
-    Read(buffer);
-    printf("Read:%s\n", buffer);
-    getchar();
+  memset(buffer, 0, sizeof(buffer));
 
-    if (sscanf(buffer, "%d", &result) == 1) {
-      break;
-    }
+  DWORD bytesRead = 0;
+  while (bytesRead == 0) {
+    Read(buffer, &bytesRead);
   }
+
+  int result;
+  sscanf(buffer, "%d", &result);
 
   return (GoUint8)(result == 1);
 }
@@ -124,9 +135,9 @@ GoUint8 Send(char* c_msg) {
 
   memset(buffer, 0, sizeof(buffer));
 
-  size_t bytesRead = 0;
+  DWORD bytesRead = 0;
   while (bytesRead == 0) {
-    Read(buffer);
+    Read(buffer, &bytesRead);
   }
 
   int result;
@@ -144,7 +155,7 @@ char* Receive() {
 
   memset(buffer, 0, sizeof(buffer));
 
-  size_t bytesRead = 0;
+  DWORD bytesRead = 0;
   while (bytesRead == 0) {
     Read(buffer, &bytesRead);
   }
@@ -160,16 +171,6 @@ char* Receive() {
   strcpy(c_msg, buffer);
 
   return c_msg;
-}
-
-static bool Write(const char* msg) {
-  DWORD dwWritten;
-  return WriteFile(hWriteStdin, msg, (DWORD)strlen(msg), &dwWritten, NULL);
-}
-
-static bool Read(char* buffer) {
-  DWORD dwRead;
-  return (bool)ReadFile(hReadStdout, buffer, RECV_BUF_SIZE, &dwRead, NULL);
 }
 
 #endif
