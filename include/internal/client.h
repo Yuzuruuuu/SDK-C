@@ -11,7 +11,6 @@ struct ncsdk_Client {
   float bandwidth;
   struct ncsdk_Logger* logger;
   ncsdk_List* message_handlers;
-  char* url;
 };
 typedef struct ncsdk_Client ncsdk_Client;
 

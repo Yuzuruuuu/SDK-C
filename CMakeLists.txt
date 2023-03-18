@@ -7,7 +7,7 @@ project(ncsdk)
 ################################################################
 # Options. You can change these options to control the build.
 ################################################################
-option(BUILD_SAMPLES "Build samples." ON)
+option(BUILD_SAMPLES "Build samples." OFF)
 option(BUILD_TEST "Build test." OFF)
 ################################################################
 
@@ -52,10 +52,9 @@ if(NOT MSVC)
     target_link_libraries(${PROJECT_NAME} PUBLIC wshelper)
 endif()
 
+
 # Build samples.
 if(BUILD_SAMPLES)
-    message("Samples will be built.")
-
     # Define a function to build samples.
     function(build_sample SAMPLE_NAME)
         aux_source_directory(samples/${SAMPLE_NAME} SRC_LIST)
@@ -87,8 +86,6 @@ endif()
 
 # Build test.
 if(BUILD_TEST)
-    message("Test will be built.")
-
     # Configure GoogleTest.
     include(FetchContent)
 
